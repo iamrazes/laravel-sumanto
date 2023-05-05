@@ -28,4 +28,25 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+// Admin
+Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
+
+    // Transaction System
+    // Pembelian
+    Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian');
+
+    // Penjualan
+    Route::get('/transaction/penjualan', function () { return view('admin.transaction.penjualan.index'); })->name('penjualan');
+
+    // Barang
+    Route::get('/transaction/barang', function () { return view('admin.transaction.barang.index'); })->name('barang');
+
+
+
+
+
+
+});
+
+require __DIR__ . '/auth.php';

@@ -26,8 +26,8 @@
                     </a>
                 </li>
                 <li class="nav-header">TRANSACTION SYSTEM</li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item {{ request()->routeIs('pembelian') ? 'menu-open' : '' }} {{ request()->routeIs('penjualan') ? 'menu-open' : '' }} {{ request()->routeIs('barang') ? 'menu-open' : '' }} ">
+                    <a href="#" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} {{ request()->routeIs('penjualan') ? 'active' : '' }} {{ request()->routeIs('barang') ? 'active' : '' }} ">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Transaksi
@@ -36,19 +36,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('pembelian') }}" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pembelian</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('penjualan') }}" class="nav-link {{ request()->routeIs('penjualan') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Penjualan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('barang') }}" class="nav-link {{ request()->routeIs('barang') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Barang</p>
                             </a>
