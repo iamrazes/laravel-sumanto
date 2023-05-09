@@ -42,10 +42,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     // Barang
     Route::get('/transaction/barang', function () { return view('admin.transaction.barang.index'); })->name('barang');
 
-    //Management
-    // Dashboard Management
-    Route::get('/management/mdashboard', function () { return view('admin.management.mdashboard.index'); })->name('mdashboard');
-
+    //Management System
     // History Transaksi
     Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi');
 

@@ -28,7 +28,7 @@
                 <li class="nav-header">TRANSACTION SYSTEM</li>
                 <li class="nav-item {{ request()->routeIs('pembelian') ? 'menu-open' : '' }} {{ request()->routeIs('penjualan') ? 'menu-open' : '' }} {{ request()->routeIs('barang') ? 'menu-open' : '' }} ">
                     <a href="#" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} {{ request()->routeIs('penjualan') ? 'active' : '' }} {{ request()->routeIs('barang') ? 'active' : '' }} ">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-credit-card"></i>
                         <p>
                             Transaksi
                             <i class="fas fa-angle-left right"></i>
@@ -38,13 +38,13 @@
                         <li class="nav-item">
                             <a href="{{ route('pembelian') }}" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Pembelian</p>
+                                <p>Transaksi Pembelian</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('penjualan') }}" class="nav-link {{ request()->routeIs('penjualan') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Penjualan</p>
+                                <p>Transaksi Penjualan</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -66,12 +66,6 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="{{ route('mdashboard') }}" class="nav-link {{ request()->routeIs('mdashboard') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard Management</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ route('htransaksi') }}" class="nav-link {{ request()->routeIs('htransaksi') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>History Transaksi</p>
@@ -86,13 +80,13 @@
                         <li class="nav-item">
                             <a href="{{ route('pstokbarang') }}" class="nav-link {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Penambahan Stok Barang</p>
+                                <p>Tambah Stok Barang</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('pbarangbaru') }}" class="nav-link {{ request()->routeIs('pbarangbaru') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Penambahan Barang Baru</p>
+                                <p>Tambah Barang Baru</p>
                             </a>
                         </li>
                         <li class="nav-item">
