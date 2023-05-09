@@ -42,9 +42,27 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     // Barang
     Route::get('/transaction/barang', function () { return view('admin.transaction.barang.index'); })->name('barang');
 
+    //Management
+    // Dashboard Management
+    Route::get('/management/mdashboard', function () { return view('admin.management.mdashboard.index'); })->name('mdashboard');
 
+    // History Transaksi
+    Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi');
 
+    // Laporan Keuangan
+    Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan');
 
+    // Penambahan Stok barang
+    Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang');
+
+    // Penambahan Barang Baru
+    Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru');
+
+    // Akun Pegawai
+    Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai');
+
+    // pakun
+    Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun');
 
 
 });
