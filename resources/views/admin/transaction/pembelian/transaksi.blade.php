@@ -23,7 +23,7 @@
         <div class="content">
             <div class="row m-2">
                 <div>
-                    <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1">
+                    <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1" type="">
                         <span>Cancel</span>
                     </button>
                 </div>
@@ -63,24 +63,25 @@
         <!-- Search bar -->
         <div class="content mt-3">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col">
+                <div class=" row">
+                    <div class="d-flex col">
                         <div class="input-group">
-                            <input type="search" class="form-control form-control-lg" placeholder="Search">
+                            {{-- Barang --}}
+                            <input type="search" class="form-control form-control-lg" placeholder="Barang">
                             <div class="input-group-append">
-                                <button type="submit" class="btn btn-lg btn-default">
-                                    <i class="fa fa-search"></i>
+                                <button type="submit" class="btn btn-lg btn-default ">
+                                    <i class="fa fa-search "></i>
                                 </button>
                             </div>
+                            {{-- Jumlah --}}
+                            <div class="">
+                                <input type="text" class="form-control form-control-lg ml-1" style="width:100px;" placeholder="Jumlah">
+                            </div>
+                            {{-- Button --}}
+                            <button class="bg-success btn-lg border-0 ml-1" type="">
+                                <span>Tambah</span>
+                            </button>
                         </div>
-                    </div>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-control-lg">
-                    </div>
-                    <div>
-                        <button class="bg-success btn-lg border-0">
-                            <span class="">Tambah</span>
-                        </button>
                     </div>
                 </div>
             </div>

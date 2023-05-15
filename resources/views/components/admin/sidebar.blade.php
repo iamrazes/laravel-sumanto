@@ -31,6 +31,7 @@
                     {{ request()->routeIs('barang') ? 'menu-open' : '' }}
                     {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }}
                     {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang.create') ? 'menu-open' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'menu-open' : '' }}
                     {{ request()->routeIs('pembelian.kembalian') ? 'menu-open' : '' }}
@@ -45,6 +46,7 @@
                     {{ request()->routeIs('barang') ? 'active' : '' }}
                     {{ request()->routeIs('barang.edit') ? 'active' : '' }}
                     {{ request()->routeIs('barang.view') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.create') ? 'active' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'active' : '' }}
                     {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
@@ -83,6 +85,7 @@
                         <li class="nav-item">
                             <a href="{{ route('barang') }}" class="nav-link
                             {{ request()->routeIs('barang') ? 'active' : '' }}
+                            {{ request()->routeIs('barang.create') ? 'active' : '' }}
                             {{ request()->routeIs('barang.edit') ? 'active' : '' }}
                             {{ request()->routeIs('barang.view') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
