@@ -26,8 +26,23 @@
                     </a>
                 </li>
                 <li class="nav-header">TRANSACTION SYSTEM</li>
-                <li class="nav-item {{ request()->routeIs('pembelian') ? 'menu-open' : '' }} {{ request()->routeIs('penjualan') ? 'menu-open' : '' }} {{ request()->routeIs('barang') ? 'menu-open' : '' }} ">
-                    <a href="#" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} {{ request()->routeIs('penjualan') ? 'active' : '' }} {{ request()->routeIs('barang') ? 'active' : '' }} ">
+                <li class="nav-item
+                    {{-- barang --}}
+                    {{ request()->routeIs('barang') ? 'menu-open' : '' }} {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }} {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
+                    {{-- pembelian --}}
+                    {{ request()->routeIs('pembelian') ? 'menu-open' : '' }}
+                    {{-- penjualan --}}
+                    {{ request()->routeIs('penjualan') ? 'menu-open' : '' }}
+                    ">
+                    <a href="#" class="nav-link
+                    {{-- barang --}}
+                    {{ request()->routeIs('barang') ? 'active' : '' }} {{ request()->routeIs('barang.edit') ? 'active' : '' }} {{ request()->routeIs('barang.view') ? 'active' : '' }}
+                    {{-- pembelian --}}
+                    {{ request()->routeIs('pembelian') ? 'active' : '' }}
+                    {{-- penjualan --}}
+                    {{ request()->routeIs('penjualan') ? 'active' : '' }}
+
+                    ">
                         <i class="nav-icon fas fa-credit-card"></i>
                         <p>
                             Transaksi
@@ -48,7 +63,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('barang') }}" class="nav-link {{ request()->routeIs('barang') ? 'active' : '' }} ">
+                            <a href="{{ route('barang') }}" class="nav-link {{ request()->routeIs('barang') ? 'active' : '' }} {{ request()->routeIs('barang.edit') ? 'active' : '' }} {{ request()->routeIs('barang.view') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Barang</p>
                             </a>

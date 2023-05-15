@@ -41,6 +41,8 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     // Barang
     Route::get('/transaction/barang', function () { return view('admin.transaction.barang.index'); })->name('barang');
+    Route::get('/transaction/barang/view', function () { return view('admin.transaction.barang.view'); })->name('barang.view');
+    Route::get('/transaction/barang/edit', function () { return view('admin.transaction.barang.edit'); })->name('barang.edit');
 
     //Management System
     // History Transaksi

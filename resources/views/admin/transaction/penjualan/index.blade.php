@@ -10,7 +10,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                             <li class="breadcrumb-item active">Transaksi</li>
                             <li class="breadcrumb-item active">Transaksi Penjualan</li>
                         </ol>
@@ -120,8 +120,12 @@
                                 <td>Rp. 1000 </td>
                                 <td>1 Pcs</td>
                                 <td>
-                                    <button style="width: 25px; height: 25px;"
-                                        class="badge bg-danger border-0 mr-1">x</button>
+                                    <button style="width: 30px; height: 30px;"
+                                        class="badge bg-danger border-0 mr-1">
+                                    <span class="fa fa-times">
+
+                                    </span>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -131,8 +135,12 @@
                                 <td>Rp. 2000 </td>
                                 <td>1 Pcs</td>
                                 <td>
-                                    <button style="width: 25px; height: 25px;"
-                                        class="badge bg-danger border-0 mr-1">x</button>
+                                    <button style="width: 30px; height: 30px;"
+                                        class="badge bg-danger border-0 mr-1">
+                                    <span class="fa fa-times">
+
+                                    </span>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -142,8 +150,12 @@
                                 <td>Rp. 3000 </td>
                                 <td>1 Pcs</td>
                                 <td>
-                                    <button style="width: 25px; height: 25px;"
-                                        class="badge bg-danger border-0 mr-1">x</button>
+                                    <button style="width: 30px; height: 30px;"
+                                        class="badge bg-danger border-0 mr-1">
+                                    <span class="fa fa-times">
+
+                                    </span>
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -153,8 +165,12 @@
                                 <td>Rp. 4000 </td>
                                 <td>1 Pcs</td>
                                 <td>
-                                    <button style="width: 25px; height: 25px;"
-                                        class="badge bg-danger border-0 mr-1">x</button>
+                                    <button style="width: 30px; height: 30px;"
+                                        class="badge bg-danger border-0 mr-1">
+                                    <span class="fa fa-times">
+
+                                    </span>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -163,8 +179,8 @@
                         <div class="card-footer bg-white rounded">
                             <h3 class="card-title">Total Harga :</h3>
                         </div>
-                        <div class="card-footer">
-                            <h3 class="card-title">Rp. 999999</h3>
+                        <div class="card-footer bg-white rounded">
+                            <h3 class="card-title text-bold">Rp. 999999</h3>
                         </div>
                     </div>
                 </div>
