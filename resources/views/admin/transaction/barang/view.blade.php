@@ -10,15 +10,15 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Barang</li>
-                        <li class="breadcrumb-item active">View</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
 
-    <div class="content">
+    <div class="content ml-2 mr-2 pb-2">
         <div class="card card-info">
             <div class="card-header">
                 <h3 class="card-title">Detail Barang</h3>

@@ -25,9 +25,10 @@
             <div>
                 <a href="{{ route('penjualan.transaksi') }}">
                     <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1">
-                        <span>
-                            Transaksi Baru
+
+                        <span class="fa fa-plus">
                         </span>
+                        Transaksi Baru
                     </button>
                 </a>
             </div>

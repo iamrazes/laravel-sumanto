@@ -75,10 +75,10 @@
                     <span>
                         Pembayaran :
                     </span>
-                    <div class="form-group">
-                        <input class="rounded text-lg p-2" style="width:400px; height:50px;">
+                    <div class="d-flex form-group">
+                    <input class="rounded text-lg p-2 border" style=" height:50px; width:750px;">
                     </input>
-                    <button type="submit" class="rounded bg-success border-0" style="height:50px; width:75px;">
+                    <button type="submit" class="rounded bg-success border-0 ml-2" style="height:50px; width:75px;">
                         Bayar
                     </button>
                     </div>

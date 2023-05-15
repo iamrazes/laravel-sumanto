@@ -10,6 +10,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                        <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Barang</li>
                     </ol>
                 </div><!-- /.col -->
@@ -18,12 +19,23 @@
     </div>
 
     <section class="content">
+        <div class="row m-2">
+            <div>
+                <a href="{{ route('barang.create') }}">
+                    <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1">
+                        <span class="fa fa-plus">
+                        </span>
+                        Barang Baru
+                    </button>
+                </a>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Detail Barang</h3>
+                            <h3 class="card-title">Database Barang</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
