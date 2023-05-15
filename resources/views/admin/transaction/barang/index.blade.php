@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Barang / Stok Barang</h3>
+                            <h3 class="card-title">Detail Barang</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -45,17 +45,18 @@
                                         <td>24</td>
                                         <td>
                                             {{-- View Stock Button  --}}
-                                            <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;">
-                                                <a href="{{ route('barang.view') }}"><span class="fa fa-eye">
-                                                </span></a>
+                                            <a href="{{ route('barang.view') }}">
+                                                <button class="bg-success border-0 rounded"
+                                                    style="width: 30px; height: 30px;"><span class="fa fa-eye">
+                                                    </span>
 
-                                            </button>
+                                                </button></a>
                                             {{-- Edit Stock Button  --}}
-                                            <button class="bg-secondary border-0 rounded"
-                                                style="width: 30px; height: 30px;">
-                                                <a href="{{ route('barang.edit') }}"><span class="far fa-edit">
-                                                </span></a>
-                                            </button>
+                                                <a href="{{ route('barang.edit') }}"><button
+                                                        class="bg-secondary border-0 rounded"
+                                                        style="width: 30px; height: 30px;"><span class="far fa-edit">
+                                                        </span>
+                                                    </button></a>
 
                                         </td>
                                     </tr>
@@ -66,17 +67,18 @@
                                         <td>24</td>
                                         <td>
                                             {{-- View Stock Button  --}}
-                                            <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;">
-                                                <a href="{{ route('barang.view') }}"><span class="fa fa-eye">
-                                                </span></a>
+                                            <a href="{{ route('barang.view') }}">
+                                                <button class="bg-success border-0 rounded"
+                                                    style="width: 30px; height: 30px;"><span class="fa fa-eye">
+                                                    </span>
 
-                                            </button>
+                                                </button></a>
                                             {{-- Edit Stock Button  --}}
-                                            <button class="bg-secondary border-0 rounded"
-                                                style="width: 30px; height: 30px;">
-                                                <a href="{{ route('barang.edit') }}"><span class="far fa-edit">
-                                                </span></a>
-                                            </button>
+                                                <a href="{{ route('barang.edit') }}"><button
+                                                        class="bg-secondary border-0 rounded"
+                                                        style="width: 30px; height: 30px;"><span class="far fa-edit">
+                                                        </span>
+                                                    </button></a>
 
                                         </td>
                                     </tr>

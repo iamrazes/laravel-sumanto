@@ -28,19 +28,31 @@
                 <li class="nav-header">TRANSACTION SYSTEM</li>
                 <li class="nav-item
                     {{-- barang --}}
-                    {{ request()->routeIs('barang') ? 'menu-open' : '' }} {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }} {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.kembalian') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.transaksi') ? 'menu-open' : '' }}
                     {{-- penjualan --}}
                     {{ request()->routeIs('penjualan') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('penjualan.kembalian') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('penjualan.transaksi') ? 'menu-open' : '' }}
                     ">
                     <a href="#" class="nav-link
                     {{-- barang --}}
-                    {{ request()->routeIs('barang') ? 'active' : '' }} {{ request()->routeIs('barang.edit') ? 'active' : '' }} {{ request()->routeIs('barang.view') ? 'active' : '' }}
+                    {{ request()->routeIs('barang') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.edit') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.view') ? 'active' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'active' : '' }}
+                    {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
+                    {{ request()->routeIs('pembelian.transaksi') ? 'active' : '' }}
                     {{-- penjualan --}}
                     {{ request()->routeIs('penjualan') ? 'active' : '' }}
+                    {{ request()->routeIs('penjualan.kembalian') ? 'active' : '' }}
+                    {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }}
 
                     ">
                         <i class="nav-icon fas fa-credit-card"></i>
@@ -51,19 +63,28 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('pembelian') }}" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} ">
+                            <a href="{{ route('pembelian') }}" class="nav-link
+                            {{ request()->routeIs('pembelian') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.transaksi') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Transaksi Pembelian</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('penjualan') }}" class="nav-link {{ request()->routeIs('penjualan') ? 'active' : '' }} ">
+                            <a href="{{ route('penjualan') }}" class="nav-link
+                            {{ request()->routeIs('penjualan') ? 'active' : '' }}
+                            {{ request()->routeIs('penjualan.kembalian') ? 'active' : '' }}
+                            {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Transaksi Penjualan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('barang') }}" class="nav-link {{ request()->routeIs('barang') ? 'active' : '' }} {{ request()->routeIs('barang.edit') ? 'active' : '' }} {{ request()->routeIs('barang.view') ? 'active' : '' }}">
+                            <a href="{{ route('barang') }}" class="nav-link
+                            {{ request()->routeIs('barang') ? 'active' : '' }}
+                            {{ request()->routeIs('barang.edit') ? 'active' : '' }}
+                            {{ request()->routeIs('barang.view') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Barang</p>
                             </a>
