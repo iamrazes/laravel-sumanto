@@ -46,9 +46,10 @@ class BarangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Barang $barang)
+    public function show($id)
     {
-        //
+        $dtbarang = Barang::findOrFail($id);
+        return view('admin.transaction.barang.view',compact('dtbarang'));
     }
 
     /**

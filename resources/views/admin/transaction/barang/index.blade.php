@@ -20,9 +20,9 @@
 
 <section class="content">
     <div class="row m-2">
-        <div>
+        <div class="mb-2">
             <a href="{{ route('admin.transaction.barang.create') }}">
-                <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1">
+                <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded shadow">
                     <span class="fa fa-plus">
                     </span>
                     Barang Baru
@@ -60,10 +60,12 @@
                                     <td>{{ $item->stok_barang }}</td>
                                     <td class="d-flex flex-row justify-content-between">
                                         <div>
+                                            <a href="{{ route('admin.transaction.barang.view', $item->id) }}">
                                             <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-eye">
                                                 </span>
 
                                             </button>
+                                            </a>
                                         </div>
 
                                         <div>

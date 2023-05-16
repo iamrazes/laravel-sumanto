@@ -32,38 +32,38 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">ID Barang</label>
                     <div class="col-sm-10">
-                        <p>{{ $item->id }}</p>
+                            <input  class="form-control" value="{{$dtbarang->id}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nama Barang</label>
                     <div class="col-sm-10">
-                        <p>{{ $item->nama_barang }}</p>
+                            <input  class="form-control" value="{{$dtbarang->nama_barang}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Stock Barang</label>
                     <div class="col-sm-10">
-                        <p>{{ $item->stok_barang }}</p>
+                            <input  class="form-control" value="{{$dtbarang->stok_barang}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Harga Jual</label>
                     <div class="col-sm-10">
-                        <p>{{ $item->harga_jual }}</p>
+                            <input  class="form-control" value="{{$dtbarang->harga_jual}}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Harga Beli</label>
                     <div class="col-sm-10">
-                        <p>{{ $item->harga_beli }}</p>
+                            <input  class="form-control" value="{{$dtbarang->harga_beli}}">
                     </div>
                 </div>
 
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="submit" class="btn btn-default float-right">Close</button>
+                <a href="{{ route('barang') }}" class="btn btn-default float-right">Close</a>
             </div>
             <!-- /.card-footer -->
         </form>

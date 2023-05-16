@@ -53,7 +53,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         'destroy' => 'admin.transaction.barang.destroy',
         'edit' => 'admin.transaction.barang.edit',
         'update' => 'admin.transaction.barang.update',
-        // 'show' => 'admin.transaction.barang.view'
+        'show' => 'admin.transaction.barang.view'
     ]);
     //Management System
     // History Transaksi

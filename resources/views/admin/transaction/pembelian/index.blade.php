@@ -24,7 +24,7 @@
         <div class="row m-2">
             <div>
                 <a href="{{ route('pembelian.transaksi') }}">
-                    <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1">
+                    <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1 shadow">
                         <span class="fa fa-plus">
                         </span>
                         Transaksi Baru
