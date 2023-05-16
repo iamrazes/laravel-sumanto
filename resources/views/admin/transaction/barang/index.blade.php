@@ -50,11 +50,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach ($dtbarang as $item)
                                     <tr>
-                                        <td>003727</td>
-                                        <td>Indomie Goreng</td>
-                                        <td>Rp. 4.000</td>
-                                        <td>24</td>
+                                        <td>{{ $item->id_barang }}</td>
+                                        <td>{{ $item->nama_barang }}</td>
+                                        <td>{{ $item->harga_jual }}</td>
+                                        <td>{{ $item->stok_barang }}</td>
                                         <td>
                                             {{-- View Stock Button  --}}
                                             <a href="">
@@ -72,6 +73,7 @@
 
                                         </td>
                                     </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -31,9 +31,16 @@ class BarangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBarangRequest $request)
+    public function store(Request $request)
     {
-        //
+        Barang::create([
+            'nama_barang' => $request->nama_barang,
+            'stok_barang'=> $request->stok_barang,
+            'harga_jual'=> $request->harga_jual,
+            'harga_beli'=> $request->harga_beli,
+            ]);
+
+        if ('Auth:') return redirect()->route('barang')->with('status', 'Barang telah ditambahkan!');
     }
 
     /**
@@ -41,7 +48,8 @@ class BarangController extends Controller
      */
     public function show(Barang $barang)
     {
-        //
+        // $barang = Barang::findOrFail($id);
+        // return view('admin.transaction.barang.view',compact('barangs'));
     }
 
     /**

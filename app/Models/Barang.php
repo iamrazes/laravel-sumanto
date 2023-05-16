@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     use HasFactory;
+
+    protected $table = "barangs";
+    protected $guarded = ["id_barang"];
+
+    // protected $fillable = [
+    //     "name", "category", "price", "stock", "description", "status"
+    // ];
 }

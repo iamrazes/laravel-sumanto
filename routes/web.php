@@ -49,11 +49,11 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::resource('/barang', BarangController::class)->names([
         'index' => 'barang',
         'create' => 'admin.transaction.barang.create',
-        // 'store' => 'admin.barangs.save',
-        // 'destroy' => 'admin.barangs.destroy',
-        // 'edit' => 'admin.barangs.edit',
-        // 'update' => 'admin.barangs.update',
-        // 'show' => 'admin.barangs.view'
+        'store' => 'admin.transaction.barang.save',
+        // 'destroy' => 'admin.transaction.barang.destroy',
+        // 'edit' => 'admin.transaction.barang.edit',
+        // 'update' => 'admin.transaction.barang.update',
+        // 'show' => 'admin.transaction.barang.view'
     ]);
     //Management System
     // History Transaksi
