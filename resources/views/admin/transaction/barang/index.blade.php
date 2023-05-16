@@ -21,7 +21,7 @@
     <section class="content">
         <div class="row m-2">
             <div>
-                <a href="{{ route('barang.create') }}">
+                <a href="{{ route('admin.transaction.barang.create') }}">
                     <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1">
                         <span class="fa fa-plus">
                         </span>

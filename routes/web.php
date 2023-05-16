@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\BarangController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,9 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi');
 
     // Barang
-    Route::resource('/barangs', ProductController::class)->names([
-        'index' => 'barangs',
-        'create' => 'admin.barangs.create',
+    Route::resource('/barang', BarangController::class)->names([
+        'index' => 'barang',
+        'create' => 'admin.transaction.barang.create',
         // 'store' => 'admin.barangs.save',
         // 'destroy' => 'admin.barangs.destroy',
         // 'edit' => 'admin.barangs.edit',
