@@ -40,7 +40,7 @@ class BarangController extends Controller
             'harga_beli'=> $request->harga_beli,
             ]);
 
-        if ('Auth:') return redirect()->route('barang')->with('status', 'Barang telah ditambahkan!');
+        if ('Auth') return redirect()->route('barang')->with('status', 'Barang telah ditambahkan!');
     }
 
     /**
@@ -48,8 +48,7 @@ class BarangController extends Controller
      */
     public function show(Barang $barang)
     {
-        // $barang = Barang::findOrFail($id);
-        // return view('admin.transaction.barang.view',compact('barangs'));
+        //
     }
 
     /**

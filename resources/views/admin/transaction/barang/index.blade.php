@@ -52,7 +52,7 @@
                                 <tbody>
                                 @foreach ($dtbarang as $item)
                                     <tr>
-                                        <td>{{ $item->id_barang }}</td>
+                                        <td>{{ $item->id }}</td>
                                         <td>{{ $item->nama_barang }}</td>
                                         <td>{{ $item->harga_jual }}</td>
                                         <td>{{ $item->stok_barang }}</td>
