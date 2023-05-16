@@ -36,14 +36,14 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     // Transaction System
     // Pembelian
-    Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian');
-    Route::get('/transaction/pembelian/kembalian', function () { return view('admin.transaction.pembelian.kembalian'); })->name('pembelian.kembalian');
-    Route::get('/transaction/pembelian/transaksi', function () { return view('admin.transaction.pembelian.transaksi'); })->name('pembelian.transaksi');
+    Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian')->middleware('can:akses-transaksi');
+    Route::get('/transaction/pembelian/kembalian', function () { return view('admin.transaction.pembelian.kembalian'); })->name('pembelian.kembalian')->middleware('can:akses-transaksi');
+    Route::get('/transaction/pembelian/transaksi', function () { return view('admin.transaction.pembelian.transaksi'); })->name('pembelian.transaksi')->middleware('can:akses-transaksi');
 
     // Penjualan
-    Route::get('/transaction/penjualan', function () { return view('admin.transaction.penjualan.index'); })->name('penjualan');
-    Route::get('/transaction/penjualan/kembalian', function () { return view('admin.transaction.penjualan.kembalian'); })->name('penjualan.kembalian');
-    Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi');
+    Route::get('/transaction/penjualan', function () { return view('admin.transaction.penjualan.index'); })->name('penjualan')->middleware('can:akses-transaksi');
+    Route::get('/transaction/penjualan/kembalian', function () { return view('admin.transaction.penjualan.kembalian'); })->name('penjualan.kembalian')->middleware('can:akses-transaksi');
+    Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi')->middleware('can:akses-transaksi');
 
     // Barang
     Route::resource('/barang', BarangController::class)->names([
@@ -57,22 +57,22 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     ]);
     //Management System
     // History Transaksi
-    Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi');
+    Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi')->middleware('can:akses-manajemen');
 
     // Laporan Keuangan
-    Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan');
+    Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan')->middleware('can:akses-manajemen');
 
     // Penambahan Stok barang
-    Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang');
+    Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang')->middleware('can:akses-manajemen');
 
     // Penambahan Barang Baru
-    Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru');
+    Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru')->middleware('can:akses-manajemen');
 
     // Akun Pegawai
-    Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai');
+    Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai')->middleware('can:akses-manajemen');
 
     // pakun
-    Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun');
+    Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
 
 
 });

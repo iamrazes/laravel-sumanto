@@ -32,31 +32,27 @@
               <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputName">Nama</label>
-                    <input type="text" class="form-control" id="exampleInputName" placeholder="Masukan Nama">
+                    <label for="name">Nama</label>
+                    <input type="text" class="form-control" id="name" placeholder="Masukan Nama">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputUmur">Umur</label>
-                    <input type="text" class="form-control" id="exampleInputUmur" placeholder="Umur (Tahun)">
+                    <label for="role">Role</label>
+                    <input type="text" class="form-control" id="role" placeholder="Role">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputAlamat">Alamat</label>
-                    <input type="text" class="form-control" id="exampleInputAlamat" placeholder="Alamat">
+                    <label for="nohp">No Hp</label>
+                    <input type="text" class="form-control" id="nohp" placeholder="No Hp">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputnohp">No Hp</label>
-                    <input type="text" class="form-control" id="exampleInputnohp" placeholder="No Hp">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputusername">Username</label>
-                    <input type="text" class="form-control" id="exampleInputusername" placeholder="Username">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
-                  </div>
-                  
-                  
+
+
                 </div>
                 <!-- /.card-body -->
 
