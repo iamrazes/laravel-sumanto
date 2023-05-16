@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Http\Requests\StoreBarangRequest;
 use App\Http\Requests\UpdateBarangRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BarangController extends Controller
 {
@@ -13,7 +16,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+        $dtbarang = Barang::all();
+        return view('admin.transaction.barang.index',compact('dtbarang'));
     }
 
     /**
@@ -21,7 +25,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.transaction.barang.create');
     }
 
     /**

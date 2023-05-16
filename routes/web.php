@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,11 +45,15 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi');
 
     // Barang
-    Route::get('/transaction/barang', function () { return view('admin.transaction.barang.index'); })->name('barang');
-    Route::get('/transaction/barang/view', function () { return view('admin.transaction.barang.view'); })->name('barang.view');
-    Route::get('/transaction/barang/edit', function () { return view('admin.transaction.barang.edit'); })->name('barang.edit');
-    Route::get('/transaction/barang/create', function () { return view('admin.transaction.barang.create'); })->name('barang.create');
-
+    Route::resource('/barangs', ProductController::class)->names([
+        'index' => 'barangs',
+        'create' => 'admin.barangs.create',
+        // 'store' => 'admin.barangs.save',
+        // 'destroy' => 'admin.barangs.destroy',
+        // 'edit' => 'admin.barangs.edit',
+        // 'update' => 'admin.barangs.update',
+        // 'show' => 'admin.barangs.view'
+    ]);
     //Management System
     // History Transaksi
     Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi');

@@ -57,36 +57,14 @@
                                         <td>24</td>
                                         <td>
                                             {{-- View Stock Button  --}}
-                                            <a href="{{ route('barang.view') }}">
+                                            <a href="">
                                                 <button class="bg-success border-0 rounded"
                                                     style="width: 30px; height: 30px;"><span class="fa fa-eye">
                                                     </span>
 
                                                 </button></a>
                                             {{-- Edit Stock Button  --}}
-                                                <a href="{{ route('barang.edit') }}"><button
-                                                        class="bg-secondary border-0 rounded"
-                                                        style="width: 30px; height: 30px;"><span class="far fa-edit">
-                                                        </span>
-                                                    </button></a>
-
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>003728</td>
-                                        <td>Indomie Ayam Bawang</td>
-                                        <td>Rp. 4.000</td>
-                                        <td>24</td>
-                                        <td>
-                                            {{-- View Stock Button  --}}
-                                            <a href="{{ route('barang.view') }}">
-                                                <button class="bg-success border-0 rounded"
-                                                    style="width: 30px; height: 30px;"><span class="fa fa-eye">
-                                                    </span>
-
-                                                </button></a>
-                                            {{-- Edit Stock Button  --}}
-                                                <a href="{{ route('barang.edit') }}"><button
+                                                <a href=""><button
                                                         class="bg-secondary border-0 rounded"
                                                         style="width: 30px; height: 30px;"><span class="far fa-edit">
                                                         </span>
