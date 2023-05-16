@@ -32,31 +32,31 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">ID Barang</label>
                     <div class="col-sm-10">
-                            <input  class="form-control" value="{{$dtbarang->id}}">
+                            <input  class="form-control text-right" value="{{$dtbarang->id}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nama Barang</label>
                     <div class="col-sm-10">
-                            <input  class="form-control" value="{{$dtbarang->nama_barang}}">
+                            <input  class="form-control text-right" value="{{$dtbarang->nama_barang}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Stock Barang</label>
                     <div class="col-sm-10">
-                            <input  class="form-control" value="{{$dtbarang->stok_barang}}">
+                            <input  class="form-control text-right" value="{{$dtbarang->stok_barang}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Harga Jual</label>
                     <div class="col-sm-10">
-                            <input  class="form-control" value="{{$dtbarang->harga_jual}}">
+                            <input  class="form-control text-right" value="{{$dtbarang->harga_jual}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Harga Beli</label>
                     <div class="col-sm-10">
-                            <input  class="form-control" value="{{$dtbarang->harga_beli}}">
+                            <input  class="form-control text-right" value="{{$dtbarang->harga_beli}}" readonly >
                     </div>
                 </div>
 
