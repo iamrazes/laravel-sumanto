@@ -54,7 +54,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         'edit' => 'admin.transaction.barang.edit',
         'update' => 'admin.transaction.barang.update',
         'show' => 'admin.transaction.barang.view'
-    ]);
+    ])->middleware('can:akses-transaksi');
     //Management System
     // History Transaksi
     Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi')->middleware('can:akses-manajemen');
@@ -70,6 +70,16 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     // Akun Pegawai
     Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai')->middleware('can:akses-manajemen');
+    Route::resource('/apegawai', UserController::class)->names([
+        'index' => 'apegawai',
+        'create' => 'admin.management.apegawai.create',
+        'store' => 'admin.management.apegawai.save',
+        'destroy' => 'admin.management.apegawai.destroy',
+        'edit' => 'admin.management.apegawai.edit',
+        'update' => 'admin.management.apegawai.update',
+        'show' => 'admin.management.apegawai.view'
+    ])->middleware('can:akses-manajemen');
+
 
     // pakun
     Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
