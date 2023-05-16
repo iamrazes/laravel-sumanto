@@ -17,7 +17,7 @@ class BarangController extends Controller
     public function index()
     {
         $dtbarang = Barang::all();
-        return view('admin.transaction.barang.index',compact('dtbarang'));
+        return view('admin.transaction.barang.index', compact('dtbarang'));
     }
 
     /**
@@ -35,10 +35,10 @@ class BarangController extends Controller
     {
         Barang::create([
             'nama_barang' => $request->nama_barang,
-            'stok_barang'=> $request->stok_barang,
-            'harga_jual'=> $request->harga_jual,
-            'harga_beli'=> $request->harga_beli,
-            ]);
+            'stok_barang' => $request->stok_barang,
+            'harga_jual' => $request->harga_jual,
+            'harga_beli' => $request->harga_beli,
+        ]);
 
         return redirect()->route('barang');
     }
@@ -54,17 +54,27 @@ class BarangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Barang $barang)
+    public function edit($id)
     {
-        //
+        $dtbarang = Barang::findOrFail($id);
+        return view('admin.transaction.barang.edit',compact('dtbarang'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBarangRequest $request, Barang $barang)
+    public function update(Request $request, $id)
     {
-        //
+        $dtbarang = Barang::findOrFail($id);
+
+        $dtbarang->update([
+            'nama_barang' => $request->nama_barang,
+            'stok_barang' => $request->stok_barang,
+            'harga_jual' => $request->harga_jual,
+            'harga_beli' => $request->harga_beli,
+        ]);
+
+        return redirect()->route('barang');
     }
 
     /**

@@ -42,9 +42,10 @@
                         <table id="example1" class="table table-bordered ">
                             <thead>
                                 <tr>
-                                    <th style="width: 75px;">ID Barang</th>
+                                    <th style="width: 50px;">ID</th>
                                     <th>Nama Barang</th>
-                                    <th style="width: 100px;">Harga Barang</th>
+                                    <th style="width: 100px;">Harga Jual</th>
+                                    <th style="width: 100px;">Harga Beli</th>
                                     <th style="width: 100px;">Stock Barang</th>
                                     <th style="width: 90px;">Option</th>
                                 </tr>
@@ -55,29 +56,32 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->nama_barang }}</td>
                                     <td>{{ $item->harga_jual }}</td>
+                                    <td>{{ $item->harga_beli }}</td>
                                     <td>{{ $item->stok_barang }}</td>
                                     <td class="d-flex flex-row justify-content-between">
                                         <div>
-                                        <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-eye">
-                                            </span>
-
-                                        </button>
-                                        </div>
-
-                                        <div>
-                                        <button class="bg-secondary border-0 rounded" style="width: 30px; height: 30px;"><span class="far fa-edit">
-                                            </span>
-                                        </button>
-                                        </div>
-
-                                        <div>
-                                        <form action="{{route('admin.transaction.barang.destroy',$item->id)}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="bg-danger border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-times">
+                                            <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-eye">
                                                 </span>
+
                                             </button>
-                                        </form>
+                                        </div>
+
+                                        <div>
+                                            <a href="{{ route('admin.transaction.barang.edit', $item->id) }}">
+                                                <button class="bg-secondary border-0 rounded" style="width: 30px; height: 30px;"><span class="far fa-edit">
+                                                    </span>
+                                                </button>
+                                            </a>
+                                        </div>
+
+                                        <div>
+                                            <form action="{{ route('admin.transaction.barang.destroy', $item->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="bg-danger border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-times">
+                                                    </span>
+                                                </button>
+                                            </form>
                                         </div>
 
                                     </td>
