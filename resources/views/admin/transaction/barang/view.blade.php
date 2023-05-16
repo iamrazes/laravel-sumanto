@@ -32,31 +32,31 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">ID Barang</label>
                     <div class="col-sm-10">
-                            <input  class="form-control text-right" value="{{$dtbarang->id}}" readonly >
+                            <input  class="form-control text-right bg-white" value="{{$dtbarang->id}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Nama Barang</label>
                     <div class="col-sm-10">
-                            <input  class="form-control text-right" value="{{$dtbarang->nama_barang}}" readonly >
+                            <input  class="form-control text-right bg-white" value="{{$dtbarang->nama_barang}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Stock Barang</label>
                     <div class="col-sm-10">
-                            <input  class="form-control text-right" value="{{$dtbarang->stok_barang}}" readonly >
+                            <input  class="form-control text-right bg-white" value="{{$dtbarang->stok_barang}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Harga Jual</label>
                     <div class="col-sm-10">
-                            <input  class="form-control text-right" value="{{$dtbarang->harga_jual}}" readonly >
+                            <input  class="form-control text-right bg-white" value="{{$dtbarang->harga_jual}}" readonly >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Harga Beli</label>
                     <div class="col-sm-10">
-                            <input  class="form-control text-right" value="{{$dtbarang->harga_beli}}" readonly >
+                            <input  class="form-control text-right bg-white" value="{{$dtbarang->harga_beli}}" readonly >
                     </div>
                 </div>
 
