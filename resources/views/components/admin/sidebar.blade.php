@@ -94,7 +94,9 @@
                         </li>
                     </ul>
                 </li>
+                @can('akses-manajemen')
                 <li class="nav-header">MANAGEMENT SYSTEM</li>
+
                 <li class="nav-item {{ request()->routeIs('mdashboard') ? 'menu-open' : '' }} {{ request()->routeIs('apegawai') ? 'menu-open' : '' }} {{ request()->routeIs('htransaksi') ? 'menu-open' : '' }} {{ request()->routeIs('lkeuangan') ? 'menu-open' : '' }} {{ request()->routeIs('pakun') ? 'menu-open' : '' }} {{ request()->routeIs('pbarangbaru') ? 'menu-open' : '' }} {{ request()->routeIs('pstokbarang') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ request()->routeIs('mdashboard') ? 'active' : '' }} {{ request()->routeIs('apegawai') ? 'active' : '' }} {{ request()->routeIs('htransaksi') ? 'active' : '' }} {{ request()->routeIs('lkeuangan') ? 'active' : '' }} {{ request()->routeIs('pakun') ? 'active' : '' }} {{ request()->routeIs('pbarangbaru') ? 'active' : '' }} {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-pie"></i>
@@ -116,18 +118,7 @@
                                 <p>Laporan Keuangan</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('pstokbarang') }}" class="nav-link {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tambah Stok Barang</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('pbarangbaru') }}" class="nav-link {{ request()->routeIs('pbarangbaru') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tambah Barang Baru</p>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <a href="{{ route('apegawai') }}" class="nav-link {{ request()->routeIs('apegawai') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -141,7 +132,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                @endcan</li>
 
 
 
