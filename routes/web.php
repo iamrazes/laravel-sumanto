@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -48,13 +49,13 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     // Barang
     Route::resource('/barang', BarangController::class)->names([
         'index' => 'barang',
-        'create' => 'admin.transaction.barang.create',
-        'store' => 'admin.transaction.barang.save',
-        'destroy' => 'admin.transaction.barang.destroy',
-        'edit' => 'admin.transaction.barang.edit',
-        'update' => 'admin.transaction.barang.update',
-        'show' => 'admin.transaction.barang.view'
-    ])->middleware('can:akses-transaksi');
+        'create' => 'barang.create',
+        'store' => 'barang.save',
+        'destroy' => 'barang.destroy',
+        'edit' => 'barang.edit',
+        'update' => 'barang.update',
+        'show' => 'barang.view'
+    ]);
     //Management System
     // History Transaksi
     Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi')->middleware('can:akses-manajemen');
@@ -63,10 +64,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan')->middleware('can:akses-manajemen');
 
     // Penambahan Stok barang
-    Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang')->middleware('can:akses-manajemen');
+    //Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang')->middleware('can:akses-manajemen');
 
     // Penambahan Barang Baru
-    Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru')->middleware('can:akses-manajemen');
+    //Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru')->middleware('can:akses-manajemen');
 
     // Akun Pegawai
     Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai')->middleware('can:akses-manajemen');
@@ -82,7 +83,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
 
     // pakun
-    Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
+    //Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
 
 
 });

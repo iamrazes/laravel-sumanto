@@ -21,7 +21,7 @@
 <section class="content">
     <div class="row m-2">
         <div class="mb-2">
-            <a href="{{ route('admin.transaction.barang.create') }}">
+            <a href="{{ route('barang.create') }}">
                 <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded shadow">
                     <span class="fa fa-plus">
                     </span>
@@ -60,7 +60,7 @@
                                     <td>{{ $item->stok_barang }}</td>
                                     <td class="d-flex flex-row justify-content-between">
                                         <div>
-                                            <a href="{{ route('admin.transaction.barang.view', $item->id) }}">
+                                            <a href="{{ route('barang.view', $item->id) }}">
                                             <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-eye">
                                                 </span>
 
@@ -69,7 +69,7 @@
                                         </div>
 
                                         <div>
-                                            <a href="{{ route('admin.transaction.barang.edit', $item->id) }}">
+                                            <a href="{{ route('barang.edit', $item->id) }}">
                                                 <button class="bg-secondary border-0 rounded" style="width: 30px; height: 30px;"><span class="far fa-edit">
                                                     </span>
                                                 </button>
@@ -77,7 +77,7 @@
                                         </div>
 
                                         <div>
-                                            <form action="{{ route('admin.transaction.barang.destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('barang.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="bg-danger border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-times">
