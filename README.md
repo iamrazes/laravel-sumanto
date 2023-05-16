@@ -23,9 +23,8 @@ Additional command :
 
 Login Credentials :
 
-Email : admin@example.com
-
-Password : password
+Email       : admin@role.test
+Password    : 12345678
 
 *Make sure that XAMPP/Laragon is turned on
 

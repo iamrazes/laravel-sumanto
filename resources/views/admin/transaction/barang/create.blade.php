@@ -35,7 +35,7 @@
                     </div>
                 @endif
             <!-- form start -->
-            <form class="form-horizontal"  action="{{ route('admin.transaction.barang.save') }}"
+            <form class="form-horizontal"  action="{{ route('barang.save') }}"
                     method="POST" enctype="multipart/form-data">
                     @csrf
                 <div class="card-body">

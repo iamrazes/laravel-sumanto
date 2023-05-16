@@ -35,7 +35,7 @@
                     </div>
                 @endif
             <!-- form start -->
-            <form class="form-horizontal"  action="{{ route('admin.transaction.barang.update', $dtbarang->id) }}"
+            <form class="form-horizontal"  action="{{ route('barang.update', $dtbarang->id) }}"
                     method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
