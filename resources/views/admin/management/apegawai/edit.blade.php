@@ -41,7 +41,8 @@
                     <label for="role">Role</label>
                     <select class="select2 form-control" name="roles">
                     @foreach($roles as $role)
-                    <option value="{{ $role->name }}"> {{$role->name}}</option>
+                    <option value="{{ $role->name }}"
+                        {{ $dtPegawai->hasRole($role->name) ? 'selected' : '' }}> {{$role->name}}</option>
                     @endforeach
                     </select>
                 </div>

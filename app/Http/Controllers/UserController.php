@@ -62,7 +62,7 @@ class UserController extends Controller
     {
         $dtPegawai = User::find($id);
         $roles = Role::all();
-        $dtPegawai->assignRole($request->roles);
+        //$dtPegawai->assignRole($request->roles);
         return view('admin.management.apegawai.edit', compact('dtPegawai', 'roles'));
 
         //dd($dtPegawai);
@@ -82,6 +82,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ]);
+        $dtPegawai->syncRoles($request->roles);
 
         return redirect()->route('apegawai');
     }
