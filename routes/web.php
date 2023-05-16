@@ -50,7 +50,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         'index' => 'barang',
         'create' => 'admin.transaction.barang.create',
         'store' => 'admin.transaction.barang.save',
-        // 'destroy' => 'admin.transaction.barang.destroy',
+        'destroy' => 'admin.transaction.barang.destroy',
         // 'edit' => 'admin.transaction.barang.edit',
         // 'update' => 'admin.transaction.barang.update',
         // 'show' => 'admin.transaction.barang.view'

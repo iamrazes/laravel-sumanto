@@ -32,7 +32,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">ID Barang</label>
                     <div class="col-sm-10">
-                        <p>{{ $item->id_barang }}</p>
+                        <p>{{ $item->id }}</p>
                     </div>
                 </div>
                 <div class="form-group row">

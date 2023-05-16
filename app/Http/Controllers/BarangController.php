@@ -40,7 +40,7 @@ class BarangController extends Controller
             'harga_beli'=> $request->harga_beli,
             ]);
 
-        if ('Auth') return redirect()->route('barang')->with('status', 'Barang telah ditambahkan!');
+        return redirect()->route('barang');
     }
 
     /**
@@ -70,8 +70,11 @@ class BarangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Barang $barang)
+    public function destroy($id)
     {
-        //
+        $dtbarang = Barang::findOrFail($id);
+        $dtbarang->delete();
+
+        return redirect()->route('barang')->with('status', 'Data has been removed!');
     }
 }
