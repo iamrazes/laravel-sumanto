@@ -94,7 +94,7 @@
                             {{ request()->routeIs('barang') ? 'active' : '' }}
                     {{ request()->routeIs('admin.transaction.barang.create') ? 'active' : '' }}
                     {{ request()->routeIs('admin.transaction.barang.edit') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.view') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.view') ? 'active' : '' }}">
                                 <i class=" far fa-circle nav-icon"></i>
                                 <p>Barang</p>
                             </a>
