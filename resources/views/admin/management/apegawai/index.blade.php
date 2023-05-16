@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            
+
             <!-- /.card -->
 
             <div class="card">
@@ -36,26 +36,33 @@
                   <tr>
                     <th>Tanggal Dibuat</th>
                     <th>Nama</th>
-                    <th>Umur</th>
-                    <th>Alamat</th>
                     <th>No Telepon</th>
-                    <th>Username</th>
+                    <th>Email</th>
                     <th>Status</th>
-                    
+
                   </tr>
                   </thead>
                   <tbody>
+                    @foreach ($dtPegawai as $item)
                   <tr>
-                    <td>3 April 2023, Senin</td>
-                    <td>Tukiyem</td>
-                    <td>3 Abad</td>
-                    <td>Antara Surga dan Neraka</td>
-                    <td>0877-4209-6423</td>
-                    <td>TwoCYum</td>
-                    <td><button type="button" class="btn btn-block btn-success">Edit</button>
+
+                    <td>{{$item->created_at}}</td>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->nohp}}</td>
+                    <td>{{$item->email}}</td>
+                    <td>
+                        <a href="{{ route('admin.management.apegawai.edit', $item->id) }}">
+                        <button type="button" class="btn btn-block btn-success">Edit</button>
+                        </a>
+                        <form action="{{ route('admin.management.apegawai.destroy', $item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-block btn-success">Delete
+                            </button>
+                        </form>
                     </td>
                   </tr>
-                  
+                  @endforeach
                   </tfoot>
                 </table>
               </div>

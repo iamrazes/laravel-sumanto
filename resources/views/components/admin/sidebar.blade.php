@@ -133,7 +133,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('pakun') }}" class="nav-link {{ request()->routeIs('pakun') ? 'active' : '' }}">
+                            <a href="{{ route('admin.management.apegawai.create') }}" class="nav-link {{ request()->routeIs('admin.management.apegawai.create') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pembuatan Akun</p>
                             </a>

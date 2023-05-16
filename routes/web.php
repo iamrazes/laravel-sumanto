@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -63,16 +64,25 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan')->middleware('can:akses-manajemen');
 
     // Penambahan Stok barang
-    Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang')->middleware('can:akses-manajemen');
+    //Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang')->middleware('can:akses-manajemen');
 
     // Penambahan Barang Baru
-    Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru')->middleware('can:akses-manajemen');
+    //Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru')->middleware('can:akses-manajemen');
 
     // Akun Pegawai
-    Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai')->middleware('can:akses-manajemen');
+    Route::resource('/apegawai', UserController::class)->names([
+        'index' => 'apegawai',
+        'create' => 'admin.management.apegawai.create',
+        'store' => 'admin.management.apegawai.save',
+        'destroy' => 'admin.management.apegawai.destroy',
+        'edit' => 'admin.management.apegawai.edit',
+        'update' => 'admin.management.apegawai.update',
+        'show' => 'admin.management.apegawai.view'
+    ]);
+
 
     // pakun
-    Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
+    //Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
 
 
 });

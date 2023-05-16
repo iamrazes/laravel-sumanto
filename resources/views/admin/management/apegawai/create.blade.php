@@ -29,27 +29,32 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{ route('admin.management.apegawai.save')}}" method="post">
+                {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">Nama</label>
-                    <input type="text" class="form-control" id="name" placeholder="Masukan Nama">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Masukan Nama">
                   </div>
                   <div class="form-group">
                     <label for="role">Role</label>
-                    <input type="text" class="form-control" id="role" placeholder="Role">
+                    <select class="select2 form-control" name="roles">
+                        @foreach($roles as $role)
+                        <option value="{{ $role->name }}"> {{$role->name}}</option>
+                        @endforeach
+                        </select>
                   </div>
                   <div class="form-group">
                     <label for="nohp">No Hp</label>
-                    <input type="text" class="form-control" id="nohp" placeholder="No Hp">
+                    <input type="text" class="form-control" name="nohp" id="nohp" placeholder="No Hp">
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                   </div>
 
 
