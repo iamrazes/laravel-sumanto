@@ -1,8 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-        <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SUMANTO</span>
     </a>
 
@@ -13,8 +12,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
@@ -27,20 +25,43 @@
                 </li>
                 <li class="nav-header">TRANSACTION SYSTEM</li>
                 <li class="nav-item
+
+        'index' => 'barang',
+        'create' => 'admin.transaction.barang.create',
+        'store' => 'admin.transaction.barang.save',
+        'destroy' => 'admin.transaction.barang.destroy',
+        'edit' => 'admin.transaction.barang.edit',
+        'update' => 'admin.transaction.barang.update',
+        'show' => 'admin.transaction.barang.view'
+
                     {{-- barang --}}
-                    {{ request()->routeIs('barang') ? 'menu-open' : '' }} {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }} {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.create') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.edit') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.view') ? 'menu-open' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.kembalian') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.transaksi') ? 'menu-open' : '' }}
                     {{-- penjualan --}}
                     {{ request()->routeIs('penjualan') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('penjualan.kembalian') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('penjualan.transaksi') ? 'menu-open' : '' }}
                     ">
                     <a href="#" class="nav-link
                     {{-- barang --}}
-                    {{ request()->routeIs('barang') ? 'active' : '' }} {{ request()->routeIs('barang.edit') ? 'active' : '' }} {{ request()->routeIs('barang.view') ? 'active' : '' }}
+                    {{ request()->routeIs('barang') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.create') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.edit') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.view') ? 'active' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'active' : '' }}
+                    {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
+                    {{ request()->routeIs('pembelian.transaksi') ? 'active' : '' }}
                     {{-- penjualan --}}
                     {{ request()->routeIs('penjualan') ? 'active' : '' }}
+                    {{ request()->routeIs('penjualan.kembalian') ? 'active' : '' }}
+                    {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }}
 
                     ">
                         <i class="nav-icon fas fa-credit-card"></i>
@@ -51,20 +72,30 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('pembelian') }}" class="nav-link {{ request()->routeIs('pembelian') ? 'active' : '' }} ">
+                            <a href="{{ route('pembelian') }}" class="nav-link
+                            {{ request()->routeIs('pembelian') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.transaksi') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Transaksi Pembelian</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('penjualan') }}" class="nav-link {{ request()->routeIs('penjualan') ? 'active' : '' }} ">
+                            <a href="{{ route('penjualan') }}" class="nav-link
+                            {{ request()->routeIs('penjualan') ? 'active' : '' }}
+                            {{ request()->routeIs('penjualan.kembalian') ? 'active' : '' }}
+                            {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Transaksi Penjualan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('barang') }}" class="nav-link {{ request()->routeIs('barang') ? 'active' : '' }} {{ request()->routeIs('barang.edit') ? 'active' : '' }} {{ request()->routeIs('barang.view') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('barang') }}" class="nav-link
+                            {{ request()->routeIs('barang') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.create') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.edit') ? 'active' : '' }}
+                    {{ request()->routeIs('admin.transaction.barang.view') ? 'active' : '' }}">
+                                <i class=" far fa-circle nav-icon"></i>
                                 <p>Barang</p>
                             </a>
                         </li>
@@ -122,8 +153,7 @@
 
 
                 <li class="mt-2 nav-item pt-2" style="border-top: 1px solid #4f5962;">
-                    <a href="{{ route('logout') }}" class="nav-link"
-                        onclick="event.preventDefault();document.querySelector('#logoutForm').submit()">
+                    <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();document.querySelector('#logoutForm').submit()">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout

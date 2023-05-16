@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="content-header ">
+    <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2 border-b-2">
                 <div class="col-sm-6">
@@ -35,39 +35,38 @@
                     </div>
                 @endif
             <!-- form start -->
-            <form class="form-horizontal"  action="{{ route('admin.transaction.barang.update', $dtbarang->id) }}"
+            <form class="form-horizontal"  action="{{ route('admin.transaction.barang.save') }}"
                     method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PATCH')
                 <div class="card-body">
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">ID Barang</label>
                         <div class="col-sm-10">
-                            <input  class="form-control" placeholder="ID Barang" value="{{ $dtbarang->name }}" readonly>
+                            <input  class="form-control" placeholder="ID Barang" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Nama Barang</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nama_barang" class="form-control" placeholder="Nama Barang" value="{{ $dtbarang->nama_barang }}">
+                            <input type="text" name="nama_barang" class="form-control" placeholder="Nama Barang">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Stock Barang</label>
                         <div class="col-sm-10">
-                            <input type="number" name="stok_barang" class="form-control" placeholder="Stock Barang" value="{{ $dtbarang->stok_barang }}">
+                            <input type="number" name="stok_barang" class="form-control" placeholder="Stock Barang">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Harga Jual</label>
                         <div class="col-sm-10">
-                            <input type="number" name="harga_jual" class="form-control" placeholder="Harga Jual" value="{{ $dtbarang->harga_jual }}">
+                            <input type="number" name="harga_jual" class="form-control" placeholder="Harga Jual">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Harga Beli</label>
                         <div class="col-sm-10">
-                            <input type="number" name="harga_beli" class="form-control" placeholder="Harga Beli" value="{{ $dtbarang->harga_beli }}">
+                            <input type="number" name="harga_beli" class="form-control" placeholder="Harga Beli">
                         </div>
                     </div>
                 </div>

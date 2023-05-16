@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,15 +37,24 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     // Transaction System
     // Pembelian
     Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian');
+    Route::get('/transaction/pembelian/kembalian', function () { return view('admin.transaction.pembelian.kembalian'); })->name('pembelian.kembalian');
+    Route::get('/transaction/pembelian/transaksi', function () { return view('admin.transaction.pembelian.transaksi'); })->name('pembelian.transaksi');
 
     // Penjualan
     Route::get('/transaction/penjualan', function () { return view('admin.transaction.penjualan.index'); })->name('penjualan');
+    Route::get('/transaction/penjualan/kembalian', function () { return view('admin.transaction.penjualan.kembalian'); })->name('penjualan.kembalian');
+    Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi');
 
     // Barang
-    Route::get('/transaction/barang', function () { return view('admin.transaction.barang.index'); })->name('barang');
-    Route::get('/transaction/barang/view', function () { return view('admin.transaction.barang.view'); })->name('barang.view');
-    Route::get('/transaction/barang/edit', function () { return view('admin.transaction.barang.edit'); })->name('barang.edit');
-
+    Route::resource('/barang', BarangController::class)->names([
+        'index' => 'barang',
+        'create' => 'admin.transaction.barang.create',
+        'store' => 'admin.transaction.barang.save',
+        'destroy' => 'admin.transaction.barang.destroy',
+        'edit' => 'admin.transaction.barang.edit',
+        'update' => 'admin.transaction.barang.update',
+        'show' => 'admin.transaction.barang.view'
+    ]);
     //Management System
     // History Transaksi
     Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi');
