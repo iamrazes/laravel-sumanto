@@ -31,7 +31,7 @@
 
     <div class="content ml-2 mr-2 pb-2">
         <div class="card card-info">
-            <div class="card-header bg-warning">
+            <div class="card-header">
                 <h3 class="card-title">Detail Barang</h3>
             </div>
             <!-- /.card-header -->
@@ -78,7 +78,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-warning">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <!-- /.card-footer -->
             </form>

@@ -20,7 +20,7 @@
 
 <div class="content ml-2 mr-2 pb-2">
     <div class="card card-info">
-        <div class="card-header bg-info">
+        <div class="card-header">
             <h3 class="card-title">Detail Barang</h3>
         </div>
         <!-- /.card-header -->
@@ -63,7 +63,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <a href="{{ route('barang') }}" class="btn btn-default float-right">Close</a>
+                <a href="{{ route('barang') }}" class="btn btn-primary float-right">Close</a>
             </div>
             <!-- /.card-footer -->
         </form>

@@ -21,16 +21,17 @@
 
     <!-- Action button  -->
     <div class="content">
-        <div class="row m-2">
-            <div>
+        <div class="d-flex justify-content-center row m-2">
+            <div class="">
                 <a href="{{ route('pembelian.transaksi') }}">
-                    <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded mr-1 shadow">
-                        <span class="fa fa-plus">
+                    <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded shadow">
+                        <span class="fa fa-plus mr-2">
                         </span>
                         Transaksi Baru
                     </button>
                 </a>
             </div>
         </div>
+
     </div>
-@endsection
+        @endsection

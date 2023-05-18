@@ -52,7 +52,7 @@
                     <td>{{$item->email}}</td>
                     <td>
                         <a href="{{ route('admin.management.apegawai.edit', $item->id) }}">
-                        <button type="button" class="btn btn-block btn-success">Edit</button>
+                        <button type="button" class="btn btn-block btn-success mb-1">Edit</button>
                         </a>
                         <form action="{{ route('admin.management.apegawai.destroy', $item->id) }}" method="POST">
                             @csrf

@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-        <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('sumantologo.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">SUMANTO</span>
     </a>
 
@@ -95,8 +95,15 @@
                 @can('akses-manajemen')
                 <li class="nav-header">MANAGEMENT SYSTEM</li>
 
-                <li class="nav-item {{ request()->routeIs('mdashboard') ? 'menu-open' : '' }} {{ request()->routeIs('apegawai') ? 'menu-open' : '' }} {{ request()->routeIs('htransaksi') ? 'menu-open' : '' }} {{ request()->routeIs('lkeuangan') ? 'menu-open' : '' }} {{ request()->routeIs('pakun') ? 'menu-open' : '' }} {{ request()->routeIs('pbarangbaru') ? 'menu-open' : '' }} {{ request()->routeIs('pstokbarang') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->routeIs('mdashboard') ? 'active' : '' }} {{ request()->routeIs('apegawai') ? 'active' : '' }} {{ request()->routeIs('htransaksi') ? 'active' : '' }} {{ request()->routeIs('lkeuangan') ? 'active' : '' }} {{ request()->routeIs('pakun') ? 'active' : '' }} {{ request()->routeIs('pbarangbaru') ? 'active' : '' }} {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
+                <li class="nav-item
+                {{ request()->routeIs('mdashboard') ? 'menu-open' : '' }}
+                {{ request()->routeIs('apegawai') ? 'menu-open' : '' }}
+                {{ request()->routeIs('htransaksi') ? 'menu-open' : '' }}
+                {{ request()->routeIs('lkeuangan') ? 'menu-open' : '' }}
+                {{ request()->routeIs('admin.management.apegawai.create') ? 'menu-open' : '' }}">
+
+
+                    <a href="#" class="nav-link {{ request()->routeIs('mdashboard') ? 'active' : '' }} {{ request()->routeIs('admin.management.apegawai.create') ? 'active' : '' }} {{ request()->routeIs('htransaksi') ? 'active' : '' }} {{ request()->routeIs('lkeuangan') ? 'active' : '' }} {{ request()->routeIs('apegawai') ? 'active' : '' }} {{ request()->routeIs('pbarangbaru') ? 'active' : '' }} {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
                             Management
