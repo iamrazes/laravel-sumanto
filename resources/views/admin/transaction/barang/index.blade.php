@@ -47,7 +47,7 @@
                                     <th style="width: 100px;">Harga Jual</th>
                                     <th style="width: 100px;">Harga Beli</th>
                                     <th style="width: 100px;">Stock Barang</th>
-                                    <th style="width: 90px;">Option</th>
+                                    <th style="width: 100px;">Option</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,7 +61,7 @@
                                     <td class="d-flex flex-row justify-content-between">
                                         <div>
                                             <a href="{{ route('barang.view', $item->id) }}">
-                                            <button class="bg-success border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-eye">
+                                            <button class="bg-transparent border-2 border-info text-info rounded text-center" style="width: 35px; height: 35px;"><span class="fa fa-eye">
                                                 </span>
 
                                             </button>
@@ -70,7 +70,7 @@
 
                                         <div>
                                             <a href="{{ route('barang.edit', $item->id) }}">
-                                                <button class="bg-secondary border-0 rounded" style="width: 30px; height: 30px;"><span class="far fa-edit">
+                                                <button class="bg-transparent border-2 border-warning text-warning rounded" style="width: 35px; height: 35px;"><span class="far fa-edit">
                                                     </span>
                                                 </button>
                                             </a>
@@ -80,7 +80,7 @@
                                             <form action="{{ route('barang.destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="bg-danger border-0 rounded" style="width: 30px; height: 30px;"><span class="fa fa-times">
+                                                <button type="submit" class="bg-transparent border-2 border-danger text-danger rounded" style="width: 35px; height: 35px;"><span class="fa fa-times">
                                                     </span>
                                                 </button>
                                             </form>

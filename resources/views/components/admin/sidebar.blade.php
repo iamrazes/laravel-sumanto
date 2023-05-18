@@ -25,20 +25,11 @@
                 </li>
                 <li class="nav-header">TRANSACTION SYSTEM</li>
                 <li class="nav-item
-
-        'index' => 'barang',
-        'create' => 'admin.transaction.barang.create',
-        'store' => 'admin.transaction.barang.save',
-        'destroy' => 'admin.transaction.barang.destroy',
-        'edit' => 'admin.transaction.barang.edit',
-        'update' => 'admin.transaction.barang.update',
-        'show' => 'admin.transaction.barang.view'
-
                     {{-- barang --}}
                     {{ request()->routeIs('barang') ? 'menu-open' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.create') ? 'menu-open' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.edit') ? 'menu-open' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.view') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang.create') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'menu-open' : '' }}
                     {{ request()->routeIs('pembelian.kembalian') ? 'menu-open' : '' }}
@@ -51,9 +42,9 @@
                     <a href="#" class="nav-link
                     {{-- barang --}}
                     {{ request()->routeIs('barang') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.create') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.edit') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.view') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.create') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.edit') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.view') ? 'active' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'active' : '' }}
                     {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
@@ -92,9 +83,9 @@
                         <li class="nav-item">
                             <a href="{{ route('barang') }}" class="nav-link
                             {{ request()->routeIs('barang') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.create') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.edit') ? 'active' : '' }}
-                    {{ request()->routeIs('admin.transaction.barang.view') ? 'active' : '' }}">
+                    {{ request()->routeIs('barang.create') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.edit') ? 'active' : '' }}
+                    {{ request()->routeIs('barang.view') ? 'active' : '' }}">
                                 <i class=" far fa-circle nav-icon"></i>
                                 <p>Barang</p>
                             </a>
