@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -62,20 +63,20 @@
 
     <!-- Search bar -->
     <div class="content mt-3">
-        <div class="container-fluid">
+        <div class="">
             <div class="d-flex justify-content-between">
                 <div class="col">
                     <div class="form-group">
-                        <select class="select2 pb-4" style="width: 100%;">
-                            <option selected>Title</option>
-                            <option>Date</option>
-                            <option>Date</option>
-                            <option>Date</option>
-                            <option>Date</option>
+                        <select class="select2 " style="width: 100%; " size="3">
+                            <option selected>Pilih Barang</option>
+                            <option>Pilihan 1</option>
+                            <option>Pilihan 2</option>
+                            <option>Pilihan 3</option>
+                            <option>Pilihan 4</option>
                         </select>
                     </div>
                 </div>
-                <input type="text" class="form-control-lg border border-light mr-2 " style="width:100px;" placeholder="Jumlah">
+                <input type="number" min="0" class="form-control-lg border border-light mr-2 " style="width:100px;" placeholder="Jumlah">
                 </input>
                 <button class="bg-success btn-lg border-0">
                     <span>Tambah</span>
@@ -160,10 +161,10 @@
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-between border-top ">
-                    <div class="card-footer bg-white rounded">
+                    <div class="card-footer bg-transparent rounded">
                         <h3 class="card-title">Total Harga :</h3>
                     </div>
-                    <div class="card-footer bg-white rounded">
+                    <div class="card-footer bg-transparent rounded">
                         <h3 class="card-title text-bold">Rp. 999999</h3>
                     </div>
                 </div>
@@ -173,7 +174,7 @@
 
     <div class="d-flex justify-content-center mt-4 pb-4">
 
-        <a href="{{ route('pembelian.kembalian') }}"><button class="bg-primary border-0 rounded"
+        <a href="{{ route('pembelian.kembalian') }}"><button class="btn btn-primary border-0 rounded"
                 style="width: 200px; height: 50px;"><span>Check Out</span></button></a>
 
     </div>
