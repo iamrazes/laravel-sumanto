@@ -19,7 +19,7 @@
 </div>
 
 <section class="content">
-    <div class="row m-2">
+    {{-- <div class="row m-2">
         <div class="mb-2">
             <a href="{{ route('barang.create') }}">
                 <button style="width: 150px; height: 50px;" class="bg-success border-0 rounded shadow">
@@ -29,7 +29,7 @@
                 </button>
             </a>
         </div>
-    </div>
+    </div> --}}
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
