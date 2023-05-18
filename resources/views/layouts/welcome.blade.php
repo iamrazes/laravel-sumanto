@@ -35,35 +35,24 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
 
     <style>
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+        .vertical-center-sidebar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-
     </style>
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset('sumantologo.jpg') }}" alt="" height="60" width="60">
-        </div>
-        <x-admin.navbar />
-        <x-admin.sidebar />
+        @yield('sidebar')
 
-        {{-- Content Wrapper. Contains page content --}}
         <div class="content-wrapper">
             @yield('content')
         </div>
-        {{-- content-wrapper --}}
 
-        <x-admin.footer />
-        <form action="{{ route('logout') }}" method="post" id="logoutForm">
-            @csrf
-        </form>
     </div>
 
     <!-- jQuery -->
