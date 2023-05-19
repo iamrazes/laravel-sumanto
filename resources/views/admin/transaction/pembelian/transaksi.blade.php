@@ -24,8 +24,11 @@
     <div class="content">
         <div class="row m-2">
             <div>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1" type="">
+                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded m4-2 shadow" type="">
                     <span>Cancel</span>
+                </button>
+                <button style="width: 150px; height: 50px;" class="btn-success border-0 rounded mx-2 shadow" type="">
+                    <span>Barang Baru</span>
                 </button>
             </div>
         </div>
@@ -62,30 +65,28 @@
     </div>
 
     <!-- Search bar -->
-    <div class="content mt-3">
+    <div class="content mt-3 ">
         <div class="">
             <div class="d-flex justify-content-between">
                 <div class="col">
-                    <div class="form-group">
-                        <select class="select2 " style="width: 100%; " size="3">
-                            <option selected>Pilih Barang</option>
+                    <div class="d-flex form-group">
+                        <select class="select2" style="width: 100%;  height: 100%">
                             <option>Pilihan 1</option>
                             <option>Pilihan 2</option>
                             <option>Pilihan 3</option>
                             <option>Pilihan 4</option>
                         </select>
+                        <input type="text" placeholder="Jumlah" class="rounded border border-0 text-center mx-2" style="width: 100px" >
+                        <button class="btn-success btn-lg border-0" style="height: 100%; width: 100px">
+                            <span>Tambah</span>
+                        </button>
                     </div>
                 </div>
-                <input type="number" min="0" class="form-control-lg border border-light mr-2 " style="width:100px;" placeholder="Jumlah">
-                </input>
-                <button class="bg-success btn-lg border-0">
-                    <span>Tambah</span>
-                </button>
             </div>
         </div>
     </div>
 
-    <div class="content mt-2 ml-2">
+    <div class="content m-2">
         <div class="container-fluid"></div>
         <div class="card">
             <!-- /.card-header -->
@@ -108,7 +109,7 @@
                             <td>Nama Barang</td>
                             <td>Rp. 1000 </td>
                             <td>1 Pcs</td>
-                            <td>
+                            <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
 
@@ -117,12 +118,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>2.</td>
+                            <td>1.</td>
                             <td>ASD123</td>
                             <td>Nama Barang</td>
-                            <td>Rp. 2000 </td>
+                            <td>Rp. 1000 </td>
                             <td>1 Pcs</td>
-                            <td>
+                            <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
 
@@ -131,12 +132,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>3.</td>
+                            <td>1.</td>
                             <td>ASD123</td>
                             <td>Nama Barang</td>
-                            <td>Rp. 3000 </td>
+                            <td>Rp. 1000 </td>
                             <td>1 Pcs</td>
-                            <td>
+                            <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
 
@@ -145,12 +146,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>4.</td>
+                            <td>1.</td>
                             <td>ASD123</td>
                             <td>Nama Barang</td>
-                            <td>Rp. 4000 </td>
+                            <td>Rp. 1000 </td>
                             <td>1 Pcs</td>
-                            <td>
+                            <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
 
@@ -174,7 +175,7 @@
 
     <div class="d-flex justify-content-center mt-4 pb-4">
 
-        <a href="{{ route('pembelian.kembalian') }}"><button class="btn btn-primary border-0 rounded"
+        <a href="{{ route('pembelian.kembalian') }}"><button class="btn btn-primary border-0 rounded shadow"
                 style="width: 200px; height: 50px;"><span>Check Out</span></button></a>
 
     </div>
