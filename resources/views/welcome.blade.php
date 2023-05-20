@@ -16,10 +16,11 @@
 
             <div>
                 <div class="text-center">
-                    <img src="{{ asset('sumanto-logo/sumanto-white2.png') }}" class="img-circle mb-2" style="height:180px;" alt="">
+                    <img src="{{ asset('sumanto-logo/sumanto-white2.png') }}" class="img-circle mb-2" style="height:180px;"
+                        alt="">
                     <div class="pb-2 pt-3">
                         {{-- <h1 class="text-xxl text-bold">SUMANTO</h1> --}}
-                        <h2 class="text-sm">Sistem Manajemen dan Transaksi Offline</h2>
+                        <h2 class="text-sm">Sistem untuk Manajemen dan Transaksi Offline</h2>
                     </div>
                 </div>
 
@@ -54,4 +55,46 @@
 @endsection
 
 @section('content')
-@endsection
+    <div class="wrapper">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: .6;"
+                        src="{{ asset('sumanto-carousel/pexels-anna-shvets-3962294.jpg') }}" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block" style="text-shadow: 0 0 10px #000;">
+                        <h2>Doing transaction like never before</h2>
+                        <p>Transaction are made easy for efficieny</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: .6;"
+                        src="{{ asset('sumanto-carousel/pexels-anna-tarazevich-5910951.jpg') }}" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block" style="text-shadow: 0 0 10px #000;">
+                        <h2>Superb managerial attribute</h2>
+                        <p>Manage your products to the finest detail</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" style="height: 100vh; object-fit: cover; opacity: .6;"
+                        src="{{ asset('sumanto-carousel/pexels-jack-sparrow-4047286.jpg') }}" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block" style="text-shadow: 0 0 10px #000;">
+                        <h2>Maximized security and Optimized product</h2>
+                        <p>Theres no better feeling than secure, happy, and productive</p>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    @endsection

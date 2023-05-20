@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('title')
-    <title>SUMANTO | Dashboard</title>
+    <title>SUMANTO</title>
 
     <!-- Google Font: Source Sans Pro -->
+    <link rel="icon" href="{{ asset('sumanto-logo/sumanto-website-favicon-black2.png') }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -82,8 +83,8 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset('sumanto-logo/sumanto-icon-white.png') }}" alt=""
-                height="60" width="60">
+            <img class="animation__wobble" src="{{ asset('sumanto-logo/sumanto-white2.png') }}" alt=""
+                height="100" width="100">
         </div>
         <x-admin.navbar />
         <x-admin.sidebar />
@@ -144,25 +145,6 @@
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
     @yield('script')
 </body>
 

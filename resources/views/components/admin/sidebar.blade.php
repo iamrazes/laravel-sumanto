@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-        <img src="{{ asset('sumanto-logo/sumanto-icon-white.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="{{ asset('sumanto-logo/sumanto-website-favicon-black2.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">SUMANTO</span>
     </a>
@@ -61,7 +61,7 @@
                             ">
                         <i class="nav-icon fas fa-credit-card"></i>
                         <p>
-                            Transaksi
+                            Transaction
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>

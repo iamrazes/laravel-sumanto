@@ -14,6 +14,7 @@
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Transaksi Pembelian</li>
+                        <li class="breadcrumb-item active">1D7R4N54K51</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,9 +28,10 @@
                 <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded m4-2 shadow" type="">
                     <span>Cancel</span>
                 </button>
+                <a href="{{ route('pembelian.barangbaru') }}">
                 <button style="width: 150px; height: 50px;" class="btn-success border-0 rounded mx-2 shadow" type="">
                     <span>Barang Baru</span>
-                </button>
+                </button></a>
             </div>
         </div>
     </div>
@@ -52,12 +54,12 @@
             <div class="row">
                 <div class="col">
                     <span class="text-bold text-lg">
-                        2023040500001
+                        1D7R4N54K51
                     </span>
                 </div>
                 <div>
                     <span class="text-bold text-lg">
-                        Rabu, 2023/05/10
+                        Rabu, 07 Juni 2023
                     </span>
                 </div>
             </div>
@@ -71,10 +73,10 @@
                 <div class="col">
                     <div class="d-flex form-group">
                         <select class="select2" style="width: 100%;  height: 100%">
+                            <option selected>Pilih Barang</option>
                             <option>Pilihan 1</option>
                             <option>Pilihan 2</option>
                             <option>Pilihan 3</option>
-                            <option>Pilihan 4</option>
                         </select>
                         <input type="text" placeholder="Jumlah" class="rounded border border-0 text-center mx-2" style="width: 100px" >
                         <button class="btn-success btn-lg border-0" style="height: 100%; width: 100px">
@@ -97,6 +99,7 @@
                             <th style="width: 10px;">#</th>
                             <th style="width: 100px;">ID Barang</th>
                             <th>Barang</th>
+                            {{-- Harga Beli x Jumlah Baramg --}}
                             <th style="width: 100px;">Harga</th>
                             <th style="width: 100px;">Jumlah</th>
                             <th style="width: 30px;">Option</th>
@@ -105,7 +108,7 @@
                     <tbody>
                         <tr>
                             <td>1.</td>
-                            <td>ASD123</td>
+                            <td>1D7R4N54K51</td>
                             <td>Nama Barang</td>
                             <td>Rp. 1000 </td>
                             <td>1 Pcs</td>
@@ -118,11 +121,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>1.</td>
-                            <td>ASD123</td>
+                            <td>2.</td>
+                            <td>1D7R4N54K51</td>
                             <td>Nama Barang</td>
-                            <td>Rp. 1000 </td>
-                            <td>1 Pcs</td>
+                            <td>Rp. 2000 </td>
+                            <td>2 Pcs</td>
                             <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
@@ -132,11 +135,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>1.</td>
-                            <td>ASD123</td>
+                            <td>3.</td>
+                            <td>1D7R4N54K51</td>
                             <td>Nama Barang</td>
-                            <td>Rp. 1000 </td>
-                            <td>1 Pcs</td>
+                            <td>Rp. 3000 </td>
+                            <td>3 Pcs</td>
                             <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
@@ -146,11 +149,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>1.</td>
-                            <td>ASD123</td>
+                            <td>4.</td>
+                            <td>1D7R4N54K51</td>
                             <td>Nama Barang</td>
-                            <td>Rp. 1000 </td>
-                            <td>1 Pcs</td>
+                            <td>Rp. 4000 </td>
+                            <td>4 Pcs</td>
                             <td class="text-center">
                                 <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
                                     <span class="fa fa-times">
@@ -166,7 +169,7 @@
                         <h3 class="card-title">Total Harga :</h3>
                     </div>
                     <div class="card-footer bg-transparent rounded">
-                        <h3 class="card-title text-bold">Rp. 999999</h3>
+                        <h3 class="card-title text-bold">Rp. 10000</h3>
                     </div>
                 </div>
             </div>

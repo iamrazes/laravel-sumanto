@@ -5,16 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('title')
-    <title>SUMANTO | Dashboard</title>
+    <title>SUMANTO</title>
 
+    <link rel="icon" href="{{ asset('sumanto-logo/sumanto-website-favicon-black2.png') }}">
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
@@ -29,18 +32,32 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- Select -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
 
     <style>
+        @yield('style')
+
         .vertical-center-sidebar {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .wrapper {
+            margin-right: auto;
+            margin-left: auto;
+
+            padding-left: 125px;
+
+            max-height: 100vh;
+            overflow: auto;
+        }
+
     </style>
 </head>
 
@@ -49,9 +66,7 @@
         <!-- Preloader -->
         @yield('sidebar')
 
-        <div class="content-wrapper">
-            @yield('content')
-        </div>
+        @yield('content')
 
     </div>
 
@@ -99,6 +114,8 @@
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/popper/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('adminlte/plugins/jquery/jquery.slim.min.js') }}"></script>
     <script>
         $(function() {
             $("#example1").DataTable({
@@ -118,7 +135,9 @@
             });
         });
     </script>
-    @yield('script')
+        @yield('script')
+
+
 </body>
 
 </html>
