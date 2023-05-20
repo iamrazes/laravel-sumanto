@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            
+
             <!-- /.card -->
 
             <div class="card">
@@ -38,7 +38,7 @@
                     <th>Nama FIle</th>
                     <th>Pegawai yang Bekerja</th>
                     <th>Download</th>
-                  
+
                   </tr>
                   </thead>
                   <tbody>
@@ -49,7 +49,7 @@
                     <td>Sumanto</td>
                     <td><button type="button" class="btn btn-block btn-success">Download</button></td>
                   </tr>
-                  
+
                   </tfoot>
                 </table>
               </div>
@@ -63,4 +63,25 @@
       </div>
       <!-- /.container-fluid -->
     </section>
+@endsection
+@section('script')
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
 @endsection

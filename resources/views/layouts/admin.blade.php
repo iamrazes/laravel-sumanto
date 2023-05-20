@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SUMANTO | Dashboard</title>
+    @yield('title')
+    <title>SUMANTO</title>
 
     <!-- Google Font: Source Sans Pro -->
+    <link rel="icon" href="{{ asset('sumanto-logo/sumanto-website-favicon-black2.png') }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -49,7 +51,29 @@
             -moz-appearance: textfield;
         }
 
-        .select2 {
+        .select2-container .select2-selection--single {
+            min-height: 100%;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #444;
+            line-height: 35px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 42px;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 20px;
+        }
+
+
+        .vertical-center {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            user-select: none;
         }
     </style>
 </head>
@@ -58,8 +82,8 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset('sumantologo.jpg') }}" alt="" height="60"
-                width="60">
+            <img class="animation__wobble" src="{{ asset('sumanto-logo/sumanto-white2.png') }}" alt=""
+                height="100" width="100">
         </div>
         <x-admin.navbar />
         <x-admin.sidebar />
@@ -120,25 +144,6 @@
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
     @yield('script')
 </body>
 

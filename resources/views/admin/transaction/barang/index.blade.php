@@ -47,7 +47,7 @@
                                         <th style="width: 100px;">Harga Jual</th>
                                         <th style="width: 100px;">Harga Beli</th>
                                         <th style="width: 100px;">Stock Barang</th>
-                                        <th style="width: 150px;">Option</th>
+                                        <th style="width: 200px;">Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -77,7 +77,7 @@
                                                         {{-- <button class="bg-transparent border-2 border-warning text-warning rounded" style="width: 35px; height: 35px;"><span class="far fa-edit">
                                                     </span>
                                                 </button> --}}
-                                                        <button class="btn btn-block btn-primary mb-1">Edit
+                                                        <button class="btn btn-block btn-success mb-1">Edit
                                                         </button>
                                                     </a>
                                                 </div>
@@ -89,7 +89,7 @@
                                                         {{-- <button type="submit" class="bg-transparent border-2 border-danger text-danger rounded" style="width: 35px; height: 35px;"><span class="fa fa-times">
                                                     </span>
                                                 </button> --}}
-                                                        <button type="submit" class="btn btn-block btn-primary">Delete
+                                                        <button type="submit" class="btn btn-block btn-success">Delete
                                                         </button>
                                                     </form>
                                                 </div>
@@ -105,4 +105,26 @@
                 </div>
             </div>
     </section>
+@endsection
+
+@section('script')
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
 @endsection

@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            
+
             <!-- /.card -->
 
             <div class="card">
@@ -40,7 +40,7 @@
                     <th>Total Pembelian</th>
                     <th>Uang Terima</th>
                     <th>Uang Kembalian</th>
-                    
+
                   </tr>
                   </thead>
                   <tbody>
@@ -53,7 +53,7 @@
                     <td>Rp.100.000</td>
                     <td>Rp.99.000</td>
                   </tr>
-                  
+
                   </tfoot>
                 </table>
               </div>
@@ -82,4 +82,26 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+@endsection
+
+@section('script')
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
 @endsection

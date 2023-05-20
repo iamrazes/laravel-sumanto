@@ -40,11 +40,14 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/kembalian', function () { return view('admin.transaction.pembelian.kembalian'); })->name('pembelian.kembalian')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/transaksi', function () { return view('admin.transaction.pembelian.transaksi'); })->name('pembelian.transaksi')->middleware('can:akses-transaksi');
+    Route::get('/transaction/pembelian/selesai', function () { return view('admin.transaction.pembelian.selesai'); })->name('pembelian.selesai')->middleware('can:akses-transaksi');
+    Route::get('/transaction/pembelian/barangbaru', function () { return view('admin.transaction.pembelian.barangbaru'); })->name('pembelian.barangbaru')->middleware('can:akses-transaksi');
 
     // Penjualan
     Route::get('/transaction/penjualan', function () { return view('admin.transaction.penjualan.index'); })->name('penjualan')->middleware('can:akses-transaksi');
     Route::get('/transaction/penjualan/kembalian', function () { return view('admin.transaction.penjualan.kembalian'); })->name('penjualan.kembalian')->middleware('can:akses-transaksi');
     Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi')->middleware('can:akses-transaksi');
+    Route::get('/transaction/penjualan/selesai', function () { return view('admin.transaction.penjualan.selesai'); })->name('penjualan.selesai')->middleware('can:akses-transaksi');
 
     // Barang
     Route::resource('/barang', BarangController::class)->names([
