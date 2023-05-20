@@ -74,7 +74,6 @@
             left: 50%;
             transform: translateX(-50%);
             user-select: none;
-
         }
     </style>
 </head>
