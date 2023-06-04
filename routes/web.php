@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KPembelianController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TPembelianController;
@@ -41,13 +42,14 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     // Transaction System
     // Pembelian
     Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian')->middleware('can:akses-transaksi');
-    Route::get('/transaction/pembelian/kembalian', function () { return view('admin.transaction.pembelian.kembalian'); })->name('pembelian.kembalian')->middleware('can:akses-transaksi');
-
-
+    // Kembalian
+    Route::get('/transaction/pembelian/kembalian/{id}', [KPembelianController::class,'show'])->name('pembelian.kembalian.show')->middleware('can:akses-transaksi');
+    // Transaksi
     Route::get('/transaction/pembelian/transaksi', [TPembelianController::class, 'create'])->name('pembelian.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/transaksi/{id}', [TPembelianController::class, 'show'])->name('pembelian.transaksi.show')->middleware('can:akses-transaksi');
-
+    // End
     Route::get('/transaction/pembelian/selesai', function () { return view('admin.transaction.pembelian.selesai'); })->name('pembelian.selesai')->middleware('can:akses-transaksi');
+    // Barang Baru
     Route::get('/transaction/pembelian/barangbaru', function () { return view('admin.transaction.pembelian.barangbaru'); })->name('pembelian.barangbaru')->middleware('can:akses-transaksi');
 
     // Penjualan
