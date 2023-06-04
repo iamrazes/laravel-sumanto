@@ -22,9 +22,12 @@
 
 <!-- Action button  -->
 <div class="content">
-    <div class="row m-2">
+    <div class="row m-2 mb-4">
         <div>
-            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1">
+            <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow" type="">
+                <span>Kembali</span>
+            </button>
+            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
                 <span>Cancel</span>
             </button>
         </div>

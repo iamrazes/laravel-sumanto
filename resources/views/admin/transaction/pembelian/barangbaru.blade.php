@@ -24,7 +24,7 @@
 <div class="content">
     <div class="row m-2">
         <div>
-            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1">
+            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded m4-2 shadow" type="">
                 <span>Cancel</span>
             </button>
         </div>
@@ -70,7 +70,10 @@
                     {{-- <div class="card-footer">
                         <a href="" class="btn btn-primary float-right">Close</a>
                     </div> --}}
-                    <div class="card-footer mt-4 py-4">
+                    <div class="
+            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded m4-2 shadow" type="">
+                <span>Cancel</span>
+            </button> mt-4 py-4 rounded-lg">
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="col-sm-8 btn btn-warning">
                                 Selesai

@@ -25,7 +25,7 @@
     <div class="content">
         <div class="row m-2">
             <div>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded m4-2 shadow" type="">
+                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
                     <span>Cancel</span>
                 </button>
             </div>

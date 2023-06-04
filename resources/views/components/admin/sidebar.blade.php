@@ -34,14 +34,17 @@
                     {{ request()->routeIs('barang.create') ? 'menu-open' : '' }}
                     {{ request()->routeIs('barang.edit') ? 'menu-open' : '' }}
                     {{ request()->routeIs('barang.view') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.barangbaru') ? 'menu-open' : '' }}
                     {{-- pembelian --}}
                     {{ request()->routeIs('pembelian') ? 'menu-open' : '' }}
-                    {{ request()->routeIs('pembelian.kembalian') ? 'menu-open' : '' }}
-                    {{ request()->routeIs('pembelian.transaksi') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.kembalian.show') ? 'menu-open' : '' }}
+                    {{ request()->routeIs('pembelian.transaksi.show') ? 'menu-open' : '' }}
                     {{-- penjualan --}}
                     {{ request()->routeIs('penjualan') ? 'menu-open' : '' }}
                     {{ request()->routeIs('penjualan.kembalian') ? 'menu-open' : '' }}
                     {{ request()->routeIs('penjualan.transaksi') ? 'menu-open' : '' }}
+
+                    {{ request()->routeIs('pembelian.selesai') ? 'menu-open' : '' }}
                     ">
                     <a href="#"
                         class="nav-link
@@ -50,14 +53,18 @@
                             {{ request()->routeIs('barang.create') ? 'active' : '' }}
                             {{ request()->routeIs('barang.edit') ? 'active' : '' }}
                             {{ request()->routeIs('barang.view') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.barangbaru') ? 'active' : '' }}
                             {{-- pembelian --}}
                             {{ request()->routeIs('pembelian') ? 'active' : '' }}
-                            {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
-                            {{ request()->routeIs('pembelian.transaksi') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.kembalian.show') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.transaksi.show') ? 'active' : '' }}
                             {{-- penjualan --}}
                             {{ request()->routeIs('penjualan') ? 'active' : '' }}
                             {{ request()->routeIs('penjualan.kembalian') ? 'active' : '' }}
                             {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }}
+
+
+                            {{ request()->routeIs('pembelian.selesai') ? 'active' : '' }}
                             ">
                         <i class="nav-icon fas fa-credit-card"></i>
                         <p>
@@ -70,8 +77,10 @@
                             <a href="{{ route('pembelian') }}"
                                 class="nav-link
                             {{ request()->routeIs('pembelian') ? 'active' : '' }}
-                            {{ request()->routeIs('pembelian.kembalian') ? 'active' : '' }}
-                            {{ request()->routeIs('pembelian.transaksi') ? 'active' : '' }} ">
+                            {{ request()->routeIs('pembelian.kembalian.show') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.transaksi.show') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.barangbaru') ? 'active' : '' }}
+                            {{ request()->routeIs('pembelian.selesai') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Transaksi Pembelian</p>
                             </a>
@@ -81,7 +90,8 @@
                                 class="nav-link
                             {{ request()->routeIs('penjualan') ? 'active' : '' }}
                             {{ request()->routeIs('penjualan.kembalian') ? 'active' : '' }}
-                            {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }} ">
+                            {{ request()->routeIs('penjualan.transaksi') ? 'active' : '' }}
+                            {{ request()->routeIs('penjualan.selesai') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Transaksi Penjualan</p>
                             </a>
@@ -90,7 +100,6 @@
                             <a href="{{ route('barang') }}"
                                 class="nav-link
                             {{ request()->routeIs('barang') ? 'active' : '' }}
-                            {{ request()->routeIs('barang.create') ? 'active' : '' }}
                             {{ request()->routeIs('barang.edit') ? 'active' : '' }}
                             {{ request()->routeIs('barang.view') ? 'active' : '' }}">
                                 <i class=" far fa-circle nav-icon"></i>
