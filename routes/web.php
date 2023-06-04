@@ -5,7 +5,9 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TPembelianController;
+use App\Models\Barang;
 use App\Models\TPembelian;
+use App\Models\Bpembelian;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +47,6 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/transaction/pembelian/transaksi', [TPembelianController::class, 'create'])->name('pembelian.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/transaksi/{id}', [TPembelianController::class, 'show'])->name('pembelian.transaksi.show')->middleware('can:akses-transaksi');
 
-
-
     Route::get('/transaction/pembelian/selesai', function () { return view('admin.transaction.pembelian.selesai'); })->name('pembelian.selesai')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/barangbaru', function () { return view('admin.transaction.pembelian.barangbaru'); })->name('pembelian.barangbaru')->middleware('can:akses-transaksi');
 
@@ -55,6 +55,26 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/transaction/penjualan/kembalian', function () { return view('admin.transaction.penjualan.kembalian'); })->name('penjualan.kembalian')->middleware('can:akses-transaksi');
     Route::get('/transaction/penjualan/transaksi', function () { return view('admin.transaction.penjualan.transaksi'); })->name('penjualan.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/penjualan/selesai', function () { return view('admin.transaction.penjualan.selesai'); })->name('penjualan.selesai')->middleware('can:akses-transaksi');
+
+    Route::post('/tambahitem', function() {
+        $request = request();
+
+        $barang = Barang::findOrFail($request->barang_id);
+
+        $total_harga = $barang->harga_beli * $request->quantity;
+
+        $x = Bpembelian::create([
+            't_pembelians_id' => $request->t_pembelians_id,
+            'barang_id' => $request->barang_id,
+            'nama_barang' => $barang->nama_barang,
+            'harga_beli' => $barang->harga_beli,
+            'quantity' => $request->quantity,
+            'total_harga' => $total_harga
+        ]);
+
+        return back();
+    })->name('tambahitem');
+
 
     // Barang
     Route::resource('/barang', BarangController::class)->names([

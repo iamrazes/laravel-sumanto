@@ -28,7 +28,9 @@
                 <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded m4-2 shadow" type="">
                     <span>Cancel</span>
                 </button>
-                <a href="{{ route('pembelian.barangbaru') }}">
+                <a href="{{ route('pembelian.barangbaru', [
+                    'last_transaction_id' => $transaksi->id
+                ]) }}">
                 <button style="width: 150px; height: 50px;" class="btn-success border-0 rounded mx-2 shadow" type="">
                     <span>Barang Baru</span>
                 </button></a>
@@ -71,18 +73,20 @@
         <div class="">
             <div class="d-flex justify-content-between">
                 <div class="col">
-                    <div class="d-flex form-group">
-                        <select class="select2" style="width: 100%;  height: 100%">
+                    <form class="d-flex form-group" action="{{ route('tambahitem') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="t_pembelians_id" value="{{ $transaksi->id }}">
+                        <select class="select2" style="width: 100%;  height: 100%" name="barang_id">
                             <option value="" disabled selected>Pilih Barang</option>
                             @foreach ($dtbarang as $item)
                                 <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
                             @endforeach
                         </select>
-                        <input type="text" placeholder="Jumlah" class="rounded border border-0 text-center mx-2" style="width: 100px" >
+                        <input type="number" placeholder="Jumlah" class="rounded border border-0 text-center mx-2" style="width: 100px" name="quantity">
                         <button class="btn-success btn-lg border-0" style="height: 100%; width: 100px">
                             <span>Tambah</span>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -106,6 +110,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $n = 1;
+                        @endphp
+@foreach ($bpembelian as $item)
+<tr>
+    <td>{{ $n++ }}</td>
+    <td>{{ $item->barang_id }}</td>
+    <td>{{ $item->nama_barang }}</td>
+    <td>{{ $item->harga_beli }}</td>
+    <td>{{ $item->quantity }}</td>
+    <td></td>
+</tr>
+
+@endforeach
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-between border-top ">
@@ -113,7 +131,7 @@
                         <h3 class="card-title">Total Harga :</h3>
                     </div>
                     <div class="card-footer bg-transparent rounded">
-                        <h3 class="card-title text-bold">Rp. ###</h3>
+                        <h3 class="card-title text-bold">Rp. {{ array_sum($grand_total) }}</h3>
                     </div>
                 </div>
             </div>

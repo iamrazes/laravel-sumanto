@@ -48,11 +48,17 @@ class TPembelianController extends Controller
         $transaksi = TPembelian::findOrFail($id);
         // ambil data bpembelian
         $bpembelian = Bpembelian::where('t_pembelians_id', $id)->get();
+        $grand_total = [];
+        foreach ($bpembelian as $item) {
+            array_push($grand_total, $item->total_harga);
+        }
+
+        // return $bpembelian;
 
         // ambil data barang inventory
         $dtbarang = Barang::all();
 
-        return view('admin.transaction.pembelian.transaksi', compact('transaksi', 'bpembelian', 'dtbarang'));
+        return view('admin.transaction.pembelian.transaksi', compact('transaksi', 'bpembelian', 'dtbarang', 'grand_total'));
     }
 
     /**

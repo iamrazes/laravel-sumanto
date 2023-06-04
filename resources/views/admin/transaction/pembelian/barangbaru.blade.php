@@ -39,6 +39,9 @@
             <!-- /.card-header -->
             <!-- form start -->
             <form class="form-horizontal" action="{{ route('barang.save') }}" method="POST">
+                @if(request()->last_transaction_id)
+                    <input type="hidden" name="last_transaction_id" value="{{ request()->last_transaction_id }}">
+                @endif
                 @csrf
                 <div class="card-header">
                     <h3>Barang Baru</h3>

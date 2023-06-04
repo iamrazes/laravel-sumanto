@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('barang_id');
             $table->string('nama_barang');
             $table->integer('harga_beli');
-            $table->integer('harga_jual');
+            $table->integer('harga_jual')->nullable();
             $table->integer('quantity');
             $table->integer('total_harga');
         });

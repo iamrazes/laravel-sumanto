@@ -39,6 +39,9 @@ class BarangController extends Controller
             'harga_beli' => $request->harga_beli,
         ]);
 
+        if ($request->last_transaction_id) {
+            return redirect()->route('pembelian.transaksi.show', $request->last_transaction_id);
+        }
         return redirect()->route('pembelian.transaksi');
     }
 
