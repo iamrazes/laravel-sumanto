@@ -25,7 +25,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        return view('admin.transaction.barang.create');
+        return view('admin.transaction.pembelian.barangbaru');
     }
 
     /**
@@ -35,12 +35,11 @@ class BarangController extends Controller
     {
         Barang::create([
             'nama_barang' => $request->nama_barang,
-            'stok_barang' => $request->stok_barang,
             'harga_jual' => $request->harga_jual,
             'harga_beli' => $request->harga_beli,
         ]);
 
-        return redirect()->route('barang');
+        return redirect()->route('pembelian.transaksi');
     }
 
     /**

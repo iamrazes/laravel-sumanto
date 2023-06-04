@@ -54,12 +54,12 @@
             <div class="row">
                 <div class="col">
                     <span class="text-bold text-lg">
-                        ###
+                        {{ $transaksi->id }}
                     </span>
                 </div>
                 <div>
                     <span class="text-bold text-lg">
-                        ###
+                        {{ $transaksi->created_at->format('l, d-m-Y') }}
                     </span>
                 </div>
             </div>
@@ -73,10 +73,10 @@
                 <div class="col">
                     <div class="d-flex form-group">
                         <select class="select2" style="width: 100%;  height: 100%">
-                            <option selected>Pilih Barang</option>
-                            <option>Pilihan 1</option>
-                            <option>Pilihan 2</option>
-                            <option>Pilihan 3</option>
+                            <option value="" disabled selected>Pilih Barang</option>
+                            @foreach ($dtbarang as $item)
+                                <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
+                            @endforeach
                         </select>
                         <input type="text" placeholder="Jumlah" class="rounded border border-0 text-center mx-2" style="width: 100px" >
                         <button class="btn-success btn-lg border-0" style="height: 100%; width: 100px">

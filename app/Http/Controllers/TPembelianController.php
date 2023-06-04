@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\TPembelian;
+use App\Models\Bpembelian;
+use App\Models\Barang;
 use App\Http\Requests\StoreTPembelianRequest;
 use App\Http\Requests\UpdateTPembelianRequest;
 
@@ -41,11 +43,16 @@ class TPembelianController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TPembelian $tPembelian)
+    public function show($id)
     {
+        $transaksi = TPembelian::findOrFail($id);
         // ambil data bpembelian
+        $bpembelian = Bpembelian::where('t_pembelians_id', $id)->get();
+
         // ambil data barang inventory
-        return view('admin.transaction.pembelian.transaksi');
+        $dtbarang = Barang::all();
+
+        return view('admin.transaction.pembelian.transaksi', compact('transaksi', 'bpembelian', 'dtbarang'));
     }
 
     /**
