@@ -79,7 +79,7 @@
             </div>
             <div class="card-footer mt-4 py-4">
                 <div class="d-flex justify-content-center">
-                    <a href="{{ route('penjualan.transaksi') }}" class=" col-sm-8 btn btn-warning">
+                    <a href="{{ route('pembelian.transaksi') }}" class=" col-sm-8 btn btn-warning">
                         Selesai
                     </a>
                 </div>

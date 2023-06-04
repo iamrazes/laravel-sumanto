@@ -14,7 +14,7 @@
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Transaksi Pembelian</li>
-                        <li class="breadcrumb-item active">1D7R4N54K51</li>
+                        <li class="breadcrumb-item active">###</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -54,12 +54,12 @@
             <div class="row">
                 <div class="col">
                     <span class="text-bold text-lg">
-                        1D7R4N54K51
+                        ###
                     </span>
                 </div>
                 <div>
                     <span class="text-bold text-lg">
-                        Rabu, 07 Juni 2023
+                        ###
                     </span>
                 </div>
             </div>
@@ -106,62 +106,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1.</td>
-                            <td>1D7R4N54K51</td>
-                            <td>Nama Barang</td>
-                            <td>Rp. 1000 </td>
-                            <td>1 Pcs</td>
-                            <td class="text-center">
-                                <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
-                                    <span class="fa fa-times">
-
-                                    </span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td>1D7R4N54K51</td>
-                            <td>Nama Barang</td>
-                            <td>Rp. 2000 </td>
-                            <td>2 Pcs</td>
-                            <td class="text-center">
-                                <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
-                                    <span class="fa fa-times">
-
-                                    </span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td>1D7R4N54K51</td>
-                            <td>Nama Barang</td>
-                            <td>Rp. 3000 </td>
-                            <td>3 Pcs</td>
-                            <td class="text-center">
-                                <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
-                                    <span class="fa fa-times">
-
-                                    </span>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4.</td>
-                            <td>1D7R4N54K51</td>
-                            <td>Nama Barang</td>
-                            <td>Rp. 4000 </td>
-                            <td>4 Pcs</td>
-                            <td class="text-center">
-                                <button style="width: 30px; height: 30px;" class="badge bg-danger border-0 mr-1">
-                                    <span class="fa fa-times">
-
-                                    </span>
-                                </button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
                 <div class="d-flex justify-content-between border-top ">
@@ -169,7 +113,7 @@
                         <h3 class="card-title">Total Harga :</h3>
                     </div>
                     <div class="card-footer bg-transparent rounded">
-                        <h3 class="card-title text-bold">Rp. 10000</h3>
+                        <h3 class="card-title text-bold">Rp. ###</h3>
                     </div>
                 </div>
             </div>
