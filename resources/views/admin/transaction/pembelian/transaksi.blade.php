@@ -131,7 +131,7 @@
                     <h3 class="card-title">Total Harga :</h3>
                 </div>
                 <div class="card-footer bg-transparent rounded">
-                    <h3 class="card-title text-bold">Rp. {{ array_sum($grand_total) }}</h3>
+                    <h3 class="card-title text-bold">Rp. {{ array_sum($total_harga) }}</h3>
                 </div>
             </div>
         </div>

@@ -72,7 +72,7 @@
                                             <td>{{ $item->nama_barang}}</td>
                                             <td>{{ $item->quantity}}</td>
                                             <td>{{ $item->harga_beli}}</td>
-                                            <td>{{ $item->total_harga}}</td>
+                                            <td>{{ $item->jumlah_harga}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                             <label for="">Total Harga</label>
-                            <input type="text" class="rounded col-sm-8 bg-transparent border-white text-white text-right" style="height: 40px;" value="{{ array_sum($grand_total) }}" readonly>
+                            <input type="text" class="rounded col-sm-8 bg-transparent border-white text-white text-right" style="height: 40px;" value="{{ array_sum($total_harga) }}" readonly>
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                             <label for="">Pembayaran</label>
@@ -93,7 +93,7 @@
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                             <label for="">Kembalian</label>
-                            <input type="text" class="rounded col-sm-8 bg-transparent border-white text-white text-right" style="height: 40px;" value="{{ request()->harga_bayar ? request()->harga_bayar - array_sum($grand_total) : '' }}" readonly>
+                            <input type="text" class="rounded col-sm-8 bg-transparent border-white text-white text-right" style="height: 40px;" value="{{ request()->harga_bayar ? request()->harga_bayar - array_sum($total_harga) : '' }}" readonly>
                         </div>
 
                     </div>
@@ -104,11 +104,15 @@
             </form>
         </div>
         <div class="card-footer mt-4 py-4">
-            <div class="d-flex justify-content-center">
-                <a href="{{ route('pembelian.selesai') }}" class=" col-sm-8 btn btn-warning">
+            <form class="d-flex justify-content-center" action="{{ route('pembelian.transaksi.update', $transaksi->id)}}" method="post">
+                @csrf
+                <input type="hidden" name="harga_bayar" value="{{ request()->harga_bayar }}">
+                <input type="hidden" name="total_harga" value="{{ array_sum($total_harga) }}">
+                <input type="hidden" name="kembalian" value="{{ request()->harga_bayar ? request()->harga_bayar - array_sum($total_harga) : '' }}">
+                <button class=" col-sm-8 btn btn-warning">
                     Selesai
-                </a>
-            </div>
+                </button>
+            </form>
         </div>
     </div>
 </div>

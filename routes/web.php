@@ -48,6 +48,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::get('/transaction/pembelian/transaksi', [TPembelianController::class, 'create'])->name('pembelian.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/transaksi/{id}', [TPembelianController::class, 'show'])->name('pembelian.transaksi.show')->middleware('can:akses-transaksi');
     // End
+
+    Route::post('/transaction/pembelian/kembalian/{id}', [KPembelianController::class, 'update'])->name('pembelian.transaksi.update')->middleware('can:akses-transaksi');
+
+
     Route::get('/transaction/pembelian/selesai', function () { return view('admin.transaction.pembelian.selesai'); })->name('pembelian.selesai')->middleware('can:akses-transaksi');
     // Barang Baru
     Route::get('/transaction/pembelian/barangbaru', function () { return view('admin.transaction.pembelian.barangbaru'); })->name('pembelian.barangbaru')->middleware('can:akses-transaksi');
@@ -63,15 +67,15 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
         $barang = Barang::findOrFail($request->barang_id);
 
-        $total_harga = $barang->harga_beli * $request->quantity;
+        $jumlah_harga = $barang->harga_beli * $request->quantity;
 
-        $x = Bpembelian::create([
+        Bpembelian::create([
             't_pembelians_id' => $request->t_pembelians_id,
             'barang_id' => $request->barang_id,
             'nama_barang' => $barang->nama_barang,
             'harga_beli' => $barang->harga_beli,
             'quantity' => $request->quantity,
-            'total_harga' => $total_harga
+            'jumlah_harga' => $jumlah_harga
         ]);
 
         return back();

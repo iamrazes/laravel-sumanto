@@ -20,7 +20,10 @@ return new class extends Migration
             $table->integer('harga_beli');
             $table->integer('harga_jual')->nullable();
             $table->integer('quantity');
-            $table->integer('total_harga');
+            $table->integer('harga_bayar')->nullable();
+            $table->integer('jumlah_harga')->nullable();
+            $table->integer('total_harga')->nullable();
+            $table->integer('kembalian')->nullable();
         });
     }
 

@@ -81,10 +81,10 @@
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__wobble" src="{{ asset('sumanto-logo/sumanto-white2.png') }}" alt=""
                 height="100" width="100">
-        </div>
+        </div> -->
         <x-admin.navbar />
         <x-admin.sidebar />
 
