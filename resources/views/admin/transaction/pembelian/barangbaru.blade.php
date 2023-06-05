@@ -33,8 +33,8 @@
 
 
 
-<div class="content mt-3">
-    <div class="content ml-2 mr-2 pb-2 ">
+<div class="content mt-4">
+    <div class="content mx-2 pb-2 ">
         <div class="card ">
             <!-- /.card-header -->
             <!-- form start -->
