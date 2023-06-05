@@ -21,13 +21,29 @@
         </div><!-- /.container-fluid -->
     </div>
 
+
+
+
+    {{-- @if (session('error')) --}}
+        {{-- <div class="alert alert-danger text-white alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            {{-- <h5><i class="icon fas fa-check"></i> Alert!</h5> --}}
+            {{-- {{ session('error') }} --}}
+        {{-- </div> --}}
+    {{-- @endif --}}
+
     <!-- Action button  -->
     <div class="content">
         <div class="row m-2">
-            <div>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
-                    <span>Cancel</span>
-                </button>
+            <div class="d-flex flex-row">
+                <form action="{{ route('pembelian.transaksi.destroy', $transaksi->id) }}" method="POST">
+                    @csrf
+                    <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow"
+                        type="">
+                        <span>Cancel</span>
+                    </button>
+                </form>
+
                 <a
                     href="{{ route('pembelian.barangbaru', [
                         'last_transaction_id' => $transaksi->id,
@@ -35,7 +51,8 @@
                     <button style="width: 150px; height: 50px;" class="btn-success border-0 rounded mx-2 shadow"
                         type="">
                         <span>Barang Baru</span>
-                    </button></a>
+                    </button>
+                </a>
             </div>
         </div>
     </div>

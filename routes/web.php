@@ -46,9 +46,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     //// Transaction System ////
     // Pembelian //
     Route::get('/transaction/pembelian', function () { return view('admin.transaction.pembelian.index'); })->name('pembelian')->middleware('can:akses-transaksi');
-    // Transaksi
+    // Transaksi Pembelian
     Route::get('/transaction/pembelian/transaksi', [TPembelianController::class, 'create'])->name('pembelian.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/pembelian/transaksi/{id}', [TPembelianController::class, 'show'])->name('pembelian.transaksi.show')->middleware('can:akses-transaksi');
+    Route::post('/transaction/pembelian/transaksi/{id}/destroy', [TPembelianController::class, 'destroy'])->name('pembelian.transaksi.destroy')->middleware('can:akses-transaksi');
     // Kembalian
     Route::get('/transaction/pembelian/kembalian/{id}', [KPembelianController::class,'show'])->name('pembelian.kembalian.show')->middleware('can:akses-transaksi');
     Route::post('/transaction/pembelian/kembalian/{id}', [KPembelianController::class, 'update'])->name('pembelian.transaksi.update')->middleware('can:akses-transaksi');
@@ -59,7 +60,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     // Penjualan //
     Route::get('/transaction/penjualan', function () { return view('admin.transaction.penjualan.index'); })->name('penjualan')->middleware('can:akses-transaksi');
-    // Transaksi
+    // Transaksi Penjualan
     Route::get('/transaction/penjualan/transaksi', [TPenjualanController::class, 'create'])->name('penjualan.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/penjualan/transaksi/{id}', [TPenjualanController::class, 'show'])->name('penjualan.transaksi.show')->middleware('can:akses-transaksi');
     // Kembalian

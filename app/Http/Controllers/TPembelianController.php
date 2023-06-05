@@ -81,8 +81,11 @@ class TPembelianController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TPembelian $tPembelian)
+    public function destroy($id)
     {
-        //
+        $transaksi = TPembelian::findOrFail($id);
+        $transaksi->delete();
+
+        return redirect()->route('pembelian')->with('status', 'Transaction Cancelled!');
     }
 }

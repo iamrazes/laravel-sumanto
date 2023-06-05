@@ -23,13 +23,20 @@
     <!-- Action button  -->
     <div class="content">
         <div class="row m-2 mb-4">
-            <div>
-                <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow" type="">
-                    <span>Kembali</span>
-                </button>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
-                    <span>Cancel</span>
-                </button>
+            <div class="d-flex flex-row">
+                <a href="{{ url()->previous() }}">
+                    <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow"
+                        type="">
+                        <span>Kembali</span>
+                    </button>
+                </a>
+                <form action="{{ route('pembelian.transaksi.destroy', $transaksi->id) }}" method="POST">
+                    @csrf
+                    <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow"
+                        type="">
+                        <span>Cancel</span>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -68,7 +75,8 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th style="width: 100%" class="text-center align-middle">Nama Barang</th>
+                                                <th style="width: 100%" class="text-center align-middle">Nama Barang
+                                                </th>
                                                 <th tyle="width: 20%" class="text-center">Jumlah Barang</th>
                                                 <th tyle="width: 20%" class="text-center">Harga Barang</th>
                                                 <th tyle="width: 20%" class="text-center">Jumlah Harga</th>

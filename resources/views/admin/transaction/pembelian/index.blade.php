@@ -22,6 +22,14 @@
     <!-- Action button  -->
     <div class="content ">
 
+        @if (session('status'))
+            <div class="alert bg-danger text-white alert-dismissible mx-2 mb-4">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                {{-- <h5><i class="icon fas fa-check"></i> Alert!</h5> --}}
+                {{ session('status') }}
+            </div>
+        @endif
+
         <div class="d-flex justify-content-center mt-2 mb-4 vertical-center ">
             <div class="text-center" style="opacity: .5">
                 <img src="{{ asset('sumanto-logo/sumanto-white2.png') }}" style="width: 20%;" alt="">
