@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\TPenjualan;
+use App\Models\Bpenjualan;
+use App\Models\Barang;
 use App\Http\Requests\StoreTPenjualanRequest;
 use App\Http\Requests\UpdateTPenjualanRequest;
 
@@ -21,7 +23,13 @@ class TPenjualanController extends Controller
      */
     public function create()
     {
-        //
+        // buat transaksi kosong
+        $transaksi = TPenjualan::create([
+            'kasir_id' => request()->user()->id
+        ]);
+
+        // return view('admin.transaction.pembelian.transaksi');
+        return redirect()->route('penjualan.transaksi.show', $transaksi->id);
     }
 
     /**
@@ -35,9 +43,23 @@ class TPenjualanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TPenjualan $tPenjualan)
+    public function show($id)
     {
-        //
+        $transaksi = TPenjualan::findOrFail($id);
+        // ambil data bpenjualan
+        $bpenjualan = Bpenjualan::where('t_penjualans_id', $id)->get();
+        $total_harga = [];
+        foreach ($bpenjualan as $item) {
+            array_push($total_harga, $item->jumlah_harga);
+        }
+        // $total_harga = $grand_total;
+
+        // return $bpenjualan;
+
+        // ambil data barang inventory
+        $dtbarang = Barang::all();
+
+        return view('admin.transaction.penjualan.transaksi', compact('transaksi', 'bpenjualan', 'dtbarang', 'total_harga'));
     }
 
     /**
