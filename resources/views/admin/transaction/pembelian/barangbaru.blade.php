@@ -24,7 +24,7 @@
 <div class="content">
     <div class="row m-2">
         <div>
-            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1">
+            <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow">
                 <span>Cancel</span>
             </button>
         </div>
@@ -33,8 +33,8 @@
 
 
 
-<div class="content mt-3">
-    <div class="content ml-2 mr-2 pb-2 ">
+<div class="content mt-4">
+    <div class="content mx-2 pb-2 ">
         <div class="card ">
             <!-- /.card-header -->
             <!-- form start -->

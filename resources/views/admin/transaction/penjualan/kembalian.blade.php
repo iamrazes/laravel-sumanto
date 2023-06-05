@@ -13,7 +13,7 @@
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Transaksi Penjualan</li>
-                        <li class="breadcrumb-item active">1D7R4N54K51</li>
+                        <li class="breadcrumb-item active">{{ $transaksi->id }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -22,9 +22,12 @@
 
     <!-- Action button  -->
     <div class="content">
-        <div class="row m-2">
+        <div class="row m-2 mb-4">
             <div>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mr-1">
+                <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow" type="">
+                    <span>Kembali</span>
+                </button>
+                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
                     <span>Cancel</span>
                 </button>
             </div>
@@ -38,9 +41,9 @@
             <div class="card ">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="" method="get">
                     <div class="card-header">
-                        <h3>Detail Transaksi : 1D7R4N54K51</h3>
+                        <h3>Detail Transaksi : {{ $transaksi->id }}</h3>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column ">
@@ -70,30 +73,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Nama Barang</td>
-                                                <td>1</td>
-                                                <td>1000</td>
-                                                <td>1000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nama Barang</td>
-                                                <td>2</td>
-                                                <td>2000</td>
-                                                <td>2000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nama Barang</td>
-                                                <td>3</td>
-                                                <td>3000</td>
-                                                <td>3000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nama Barang</td>
-                                                <td>4</td>
-                                                <td>4000</td>
-                                                <td>4000</td>
-                                            </tr>
+                                            @foreach ($bpenjualan as $item)
+                                                <tr>
+                                                    <td>{{ $item->nama_barang }}</td>
+                                                    <td>{{ $item->quantity }}</td>
+                                                    <td>{{ $item->harga_jual }}</td>
+                                                    <td>{{ $item->jumlah_harga }}</td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -102,13 +89,14 @@
                                 <label for="">Total Harga</label>
                                 <input type="text"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-right"
-                                    style="height: 40px;" value="Rp. 10000" readonly>
+                                    style="height: 40px;" value="{{ array_sum($total_harga) }}" readonly>
                             </div>
                             <div class="d-flex justify-content-between mt-3">
                                 <label for="">Pembayaran</label>
                                 <input type="number"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-center p-3"
-                                    style="height: 40px;" placeholder="Masukan nominal uang">
+                                    name="harga_bayar" style="height: 40px;" placeholder="Masukan nominal uang"
+                                    value="{{ request()->harga_bayar }}">
                             </div>
                             <div class="d-flex justify-content-between">
                                 <label for=""></label>
@@ -118,7 +106,9 @@
                                 <label for="">Kembalian</label>
                                 <input type="text"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-right"
-                                    style="height: 40px;" value="Rp. 10000" readonly>
+                                    style="height: 40px;"
+                                    value="{{ request()->harga_bayar ? request()->harga_bayar - array_sum($total_harga) : '' }}"
+                                    readonly>
                             </div>
 
                         </div>
@@ -129,11 +119,17 @@
                 </form>
             </div>
             <div class="card-footer mt-4 py-4">
-                <div class="d-flex justify-content-center">
-                    <a href="{{ route('penjualan.selesai') }}" class=" col-sm-8 btn btn-warning">
+                <form class="d-flex justify-content-center"
+                    action="{{ route('penjualan.transaksi.update', $transaksi->id) }}" method="post">
+                    @csrf
+                    <input type="hidden" name="harga_bayar" value="{{ request()->harga_bayar }}">
+                    <input type="hidden" name="total_harga" value="{{ array_sum($total_harga) }}">
+                    <input type="hidden" name="kembalian"
+                        value="{{ request()->harga_bayar ? request()->harga_bayar - array_sum($total_harga) : '' }}">
+                    <button class=" col-sm-8 btn btn-warning">
                         Selesai
-                    </a>
-                </div>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
