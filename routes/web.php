@@ -8,11 +8,13 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TPembelianController;
 use App\Http\Controllers\TPenjualanController;
+use App\Http\Controllers\HpembelianController;
 use App\Models\Barang;
 use App\Models\TPembelian;
 use App\Models\Bpembelian;
 use App\Models\TPenjualan;
 use App\Models\Bpenjualan;
+use App\Models\Hpembelian;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,8 +117,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     //Management System
     // History Transaksi
-    Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi')->middleware('can:akses-manajemen');
 
+    Route::get('/management/hpembelian', [HpembelianController::class, 'index'])->name('hpembelian')->middleware('can:akses-manajemen');
+    //Route::get('/management/htransaksi', [HpembelianController::class, 'show'])->name('transaksi')->middleware('can:akses-manajemen');
+    Route::get('/management/hpenjualan', function () { return view('admin.management.hpenjualan.index'); })->name('hpenjualan')->middleware('can:akses-manajemen');
     // Laporan Keuangan
     Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan')->middleware('can:akses-manajemen');
 

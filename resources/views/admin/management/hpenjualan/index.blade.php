@@ -34,12 +34,13 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id Transaksi</th>
-                    <th>Tanggal Transaksi</th>
-                    <th>Pegawai yang Bekerja</th>
+                    <th>ID Penjualan</th>
+                    <th>Tanggal Penjualan</th>
+                    <th>Pegawai</th>
+                    <th>Jumlah Barang</th>
                     <th>Total Pembelian</th>
-                    <th>Uang Terima</th>
-                    <th>Uang Kembalian</th>
+                    <th>Harga Bayar</th>
+                    <th>Kembalian</th>
 
                   </tr>
                   </thead>
@@ -49,7 +50,8 @@
                     <td>3 April 2023, Senin</td>
                     <td>Sumanto
                     </td>
-                    <td>Rp.1.000</td>
+                    <td>1</td>
+                    <td>Rp.100.000</td>
                     <td>Rp.100.000</td>
                     <td>Rp.99.000</td>
                   </tr>

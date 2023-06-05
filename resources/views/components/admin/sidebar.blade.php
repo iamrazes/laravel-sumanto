@@ -117,7 +117,7 @@
                         class="nav-item
                 {{ request()->routeIs('mdashboard') ? 'menu-open' : '' }}
                 {{ request()->routeIs('apegawai') ? 'menu-open' : '' }}
-                {{ request()->routeIs('htransaksi') ? 'menu-open' : '' }}
+                {{ request()->routeIs('hpembelian') ? 'menu-open' : '' }}
                 {{ request()->routeIs('lkeuangan') ? 'menu-open' : '' }}
                 {{ request()->routeIs('admin.management.apegawai.create') ? 'menu-open' : '' }}">
 
@@ -132,10 +132,17 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('htransaksi') }}"
-                                    class="nav-link {{ request()->routeIs('htransaksi') ? 'active' : '' }}">
+                                <a href="{{ route('hpembelian') }}"
+                                    class="nav-link {{ request()->routeIs('hpembelian') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>History Transaksi</p>
+                                    <p>H Transaksi Pembelian</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('hpenjualan') }}"
+                                    class="nav-link {{ request()->routeIs('hpenjualan') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>H Transaksi Penjualan</p>
                                 </a>
                             </li>
                             <li class="nav-item">
