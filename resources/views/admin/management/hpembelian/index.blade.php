@@ -50,7 +50,7 @@
                       @foreach ($item as $item2)
                       @if ($loop->first)
                       <tr>
-                        <td>{{$item2->t_pembelians_id}}</td>
+                        <td>SMNT-{{$item2->t_pembelians_id}}</td>
                         <td>{{$item2->created_at}}</td>
                         <td>{{$item2->transaksi->kasir->name}}</td>
 
@@ -67,9 +67,28 @@
                       @endforeach
 
                   @endforeach
-                </tfoot>
+
+
+                  <tr>
+                    @php
+                    $arr = [];
+                    foreach ($dtPembelian as $item) {
+                      foreach ($item as $item2) {
+                        array_push($arr, $item2->total_harga);
+                      }
+                    }
+                    @endphp
+                    <td >Total: {{ array_sum($arr) }}</td>
+                    <td > </td>
+                    <td > </td>
+                    <td > </td>
+                    <td ></td>
+                    <td > </td>
+                    <td > </td>
+                  </tr>
+                </tbody>
                 </table>
-                modal disini
+
                 @foreach ($dtPembelian as $item)
                   <div class="modal fade" id="trx{{ $item[0]->t_pembelians_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -123,15 +142,7 @@
                     </div>
                   </div>
                 @endforeach
-                {{-- @php
-                    $arr = [];
-                    foreach ($dtPembelian as $item) {
-                      foreach ($item as $item2) {
-                        array_push($arr, $item2->total_harga);
-                      }
-                    }
-                @endphp
-                total: {{ array_sum($arr) }} --}}
+
               </div>
               <!-- /.card-body -->
             </div>
