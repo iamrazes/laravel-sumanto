@@ -50,7 +50,7 @@
                     @foreach ($item as $item2)
                       @if ($loop->first)
                       <tr>
-                        <td>SMNT-{{$item2->t_pembelians_id}}</td>
+                        <td>SMNTPEM-{{$item2->t_pembelians_id}}</td>
                         <td>{{$item2->created_at}}</td>
                         <td>{{$item2->transaksi->kasir->name}}</td>
                         <td>{{array_sum($item->pluck('quantity')->toArray())}}</td>

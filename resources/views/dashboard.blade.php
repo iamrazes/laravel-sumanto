@@ -258,7 +258,7 @@
                                             @foreach ($item as $item2)
                                                 @if ($loop->first)
                                         <tr>
-                                            <td>SMNTP-{{$item2->t_penjualans_id}}</td>
+                                            <td>SMNTPEM-{{$item2->t_penjualans_id}}</td>
                                             <td>{{$item2->nama_barang}}</td>
                                             <td>{{$item2->quantity}}</td>
                                             <td>

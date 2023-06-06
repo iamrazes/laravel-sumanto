@@ -50,7 +50,7 @@
                         @foreach ($item as $item2)
                             @if ($loop->first)
                       <tr>
-                        <td>SMNTP-{{$item2->t_penjualans_id}}</td>
+                        <td>SMNTPEN-{{$item2->t_penjualans_id}}</td>
                         <td>{{$item2->created_at}}</td>
                         <td>{{$item2->transaksi->kasir->name}}</td>
                         <td>{{$item2->quantity}}</td>
