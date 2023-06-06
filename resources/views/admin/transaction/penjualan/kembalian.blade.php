@@ -23,13 +23,20 @@
     <!-- Action button  -->
     <div class="content">
         <div class="row m-2 mb-4">
-            <div>
-                <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow" type="">
-                    <span>Kembali</span>
-                </button>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
-                    <span>Cancel</span>
-                </button>
+            <div class="d-flex flex-row">
+                <a href="{{ url()->previous() }}">
+                    <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow"
+                        type="">
+                        <span>Kembali</span>
+                    </button>
+                </a>
+                <form action="{{ route('penjualan.transaksi.destroy', $transaksi->id) }}" method="POST">
+                    @csrf
+                    <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow"
+                        type="">
+                        <span>Cancel</span>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -41,6 +48,16 @@
             <div class="card ">
                 <!-- /.card-header -->
                 <!-- form start -->
+                @if ($errors->any())
+                    <div class="alert btn-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form class="form-horizontal" action="" method="get">
                     <div class="card-header">
                         <h3>Detail Transaksi : {{ $transaksi->id }}</h3>
@@ -68,7 +85,7 @@
                                             <tr>
                                                 <th style="width: 100%" class="text-center align-middle">Nama Barang</th>
                                                 <th tyle="width: 20%" class="text-center">Jumlah Barang</th>
-                                                <th tyle="width: 20%" class="text-center">Harga Barang</th>
+                                                <th tyle="width: 20%" class="text-center">Harga Jual</th>
                                                 <th tyle="width: 20%" class="text-center">Jumlah Harga</th>
                                             </tr>
                                         </thead>

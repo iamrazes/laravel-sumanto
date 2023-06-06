@@ -63,6 +63,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     // Transaksi Penjualan
     Route::get('/transaction/penjualan/transaksi', [TPenjualanController::class, 'create'])->name('penjualan.transaksi')->middleware('can:akses-transaksi');
     Route::get('/transaction/penjualan/transaksi/{id}', [TPenjualanController::class, 'show'])->name('penjualan.transaksi.show')->middleware('can:akses-transaksi');
+    Route::post('/transaction/penjualan/transaksi/{id}/destroy', [TPenjualanController::class, 'destroy'])->name('penjualan.transaksi.destroy')->middleware('can:akses-transaksi');
     // Kembalian
     Route::get('/transaction/penjualan/kembalian/{id}', [KPenjualanController::class,'show'])->name('penjualan.kembalian.show')->middleware('can:akses-transaksi');
     Route::post('/transaction/penjualan/kembalian/{id}', [KPenjualanController::class, 'update'])->name('penjualan.transaksi.update')->middleware('can:akses-transaksi');

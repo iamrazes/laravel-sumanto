@@ -34,6 +34,9 @@ class KPenjualanController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'harga_bayar' => ['required']
+        ]);
 
         $transaksi = TPenjualan::findOrFail($id);
         $bpenjualan = Bpenjualan::where('t_penjualans_id', $id)->get();

@@ -88,7 +88,7 @@
                                                 <th style="width: 100%" class="text-center align-middle">Nama Barang
                                                 </th>
                                                 <th tyle="width: 20%" class="text-center">Jumlah Barang</th>
-                                                <th tyle="width: 20%" class="text-center">Harga Barang</th>
+                                                <th tyle="width: 20%" class="text-center">Harga Beli</th>
                                                 <th tyle="width: 20%" class="text-center">Jumlah Harga</th>
                                             </tr>
                                         </thead>

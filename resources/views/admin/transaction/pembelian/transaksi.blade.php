@@ -124,7 +124,7 @@
                             <th style="width: 100px;">ID Barang</th>
                             <th>Barang</th>
                             {{-- Harga Beli x Jumlah Barang --}}
-                            <th style="width: 100px;">Harga</th>
+                            <th style="width: 100px;">Harga Beli</th>
                             <th style="width: 100px;">Jumlah</th>
                             <th style="width: 30px;">Option</th>
                         </tr>
