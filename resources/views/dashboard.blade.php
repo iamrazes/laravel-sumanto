@@ -28,14 +28,17 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
                         <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
+                        @foreach ($dtBarang as $item )
+                                @if ($loop->first)
                         <div class="info-box-content">
                             <span class="info-box-text">Total Stok Barang</span>
                             <span class="info-box-number">
-                                40
+                                {{array_sum($item->pluck('stok_barang')->toArray())}}
                                 <small></small>
                             </span>
                         </div>
+                                @endif
+                        @endforeach
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
@@ -46,9 +49,21 @@
                         <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Stok Barang Baru Minggu ini</span>
-                            <span class="info-box-number">30</span>
+                            <span class="info-box-text">Barang Terbaru</span>
+                            <span class="info-box-number">
+                                @foreach ($dtPembelian as $item )
+                                @if ($loop->first)
+                                @foreach ($item as $item2)
+
+                                {{$item2->nama_barang}}
+
+                                @endforeach
+                                @endif
+                                @endforeach
+
+                            </span>
                         </div>
+
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
@@ -63,8 +78,16 @@
                         <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Total Penjualan Mingguan</span>
-                            <span class="info-box-number">Rp.5.000.000</span>
+                            <span class="info-box-text">Total Penjualan</span>
+                            <span class="info-box-number">Rp.@php
+                                $tpenjualanarr = [];
+                                foreach ($dtPenjualan as $item) {
+                                foreach ($item as $item2) {
+                                    array_push($tpenjualanarr, $item2->harga_jual);
+                                }
+                                }
+                                @endphp
+                                {{ array_sum($tpenjualanarr) }}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -77,7 +100,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Admin / Pegawai</span>
-                            <span class="info-box-number">1</span>
+                            <span class="info-box-number">{{count($dtUser)}}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -91,7 +114,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title">Penjualan Bulanan</h5>
+                            <h5 class="card-title">Penjualan</h5>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -112,10 +135,17 @@
                             <div class="row">
                                 <div class="col-sm-3 col-6">
                                     <div class="description-block border-right">
-                                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>
-                                            17%</span>
-                                        <h5 class="description-header">Rp.5.000.000</h5>
-                                        <span class="description-text">Penjualan Bulan ini</span>
+                                        <br>
+                                        <h5 class="description-header">Rp.@php
+                                            $penjualanarr = [];
+                                            foreach ($dtPenjualan as $item) {
+                                            foreach ($item as $item2) {
+                                                array_push($penjualanarr, $item2->harga_jual);
+                                            }
+                                            }
+                                            @endphp
+                                            {{ array_sum($penjualanarr) }}</span></h5>
+                                        <span class="description-text">Penjualan</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
@@ -123,7 +153,15 @@
                                 <div class="col-sm-3 col-6">
                                     <div class="description-block border-right">
                                         <br>
-                                        <h5 class="description-header">Rp.3.000.000</h5>
+                                        <h5 class="description-header">Rp.@php
+                                            $tpembelianarr = [];
+                                            foreach ($dtPembelian as $item) {
+                                              foreach ($item as $item2) {
+                                                array_push($tpembelianarr, $item2->total_harga);
+                                              }
+                                            }
+                                            @endphp
+                                            {{ array_sum($tpembelianarr) }}</h5>
                                         <span class="description-text">Total Pembelian Barang</span>
                                     </div>
                                     <!-- /.description-block -->
@@ -131,9 +169,18 @@
                                 <!-- /.col -->
                                 <div class="col-sm-3 col-6">
                                     <div class="description-block border-right">
-                                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>
-                                            40%</span>
-                                        <h5 class="description-header">Rp.2.000.000</h5>
+                                        <br>
+                                        <h5 class="description-header">Rp.
+                                            @php
+                                            $tkeuntungan = [];
+                                            foreach ($dtPenjualan as $item) {
+                                            foreach ($item as $item2) {
+                                                array_push($tkeuntungan, $item2->quantity);
+                                            }
+                                            }
+                                            @endphp
+                                            {{ array_sum($penjualanarr) - array_sum($tpembelianarr)  }}
+                                            </h5>
                                         <span class="description-text">Total Keuntungan</span>
                                     </div>
                                     <!-- /.description-block -->
@@ -142,7 +189,15 @@
                                 <div class="col-sm-3 col-6">
                                     <div class="description-block">
                                         <br>
-                                        <h5 class="description-header">1200</h5>
+                                        <h5 class="description-header">@php
+                                            $sbarangterjualarr = [];
+                                            foreach ($dtPenjualan as $item) {
+                                            foreach ($item as $item2) {
+                                                array_push($sbarangterjualarr, $item2->quantity);
+                                            }
+                                            }
+                                            @endphp
+                                            {{ array_sum($sbarangterjualarr) }}</h5>
                                         <span class="description-text">Stok Barang Terjual</span>
                                     </div>
                                     <!-- /.description-block -->
@@ -199,69 +254,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($dtPenjualan as $item)
+                                            @foreach ($item as $item2)
+                                                @if ($loop->first)
                                         <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
+                                            <td>SMNTP-{{$item2->t_penjualans_id}}</td>
+                                            <td>{{$item2->nama_barang}}</td>
+                                            <td>{{$item2->quantity}}</td>
                                             <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
+                                                <div class="sparkbar" data-color="#00a65a" data-height="20">
+                                                    Rp.{{$item2->harga_jual}}
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
-                                            <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
-                                            <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
-                                            <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
-                                            <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
-                                            <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                            <td>Tepung</td>
-                                            <td><span class="badge badge-success">30</span></td>
-                                            <td>
-                                                <div class="sparkbar" data-color="#00a65a" data-height="20">Rp.30.000
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -270,8 +278,7 @@
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
 
-                            <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">History
-                                Transaksi</a>
+
                         </div>
                         <!-- /.card-footer -->
                     </div>
@@ -304,54 +311,28 @@
                         <div class="card-body p-0">
                             <ul class="products-list product-list-in-card pl-2 pr-2">
                                 <li class="item">
+                                    @foreach ($dtPembelian as $item)
+                                        @foreach ($item as $item2)
 
                                     <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Tepung
-                                            <span class="badge badge-warning float-right">Rp.30.000</span></a>
+                                        <a href="javascript:void(0)" class="product-title">{{$item2->nama_barang}}
+                                            <span class="badge badge-warning float-right">Rp.{{$item2->harga_beli}}</span></a>
                                         <span class="product-description">
-                                            30 Stok
+                                            {{$item2->quantity}} Stok
                                         </span>
                                     </div>
                                 </li>
+
+                                        @endforeach
+                                    @endforeach
                                 <!-- /.item -->
-                                <li class="item">
 
-                                    <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Tepung
-                                            <span class="badge badge-warning float-right">Rp.30.000</span></a>
-                                        <span class="product-description">
-                                            30 Stok
-                                        </span>
-                                    </div>
-                                </li>
-                                <!-- /.item -->
-                                <li class="item">
-
-                                    <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Tepung
-                                            <span class="badge badge-warning float-right">Rp.30.000</span></a>
-                                        <span class="product-description">
-                                            30 Stok
-                                        </span>
-                                    </div>
-                                </li>
-                                <!-- /.item -->
-                                <li class="item">
-
-                                    <div class="product-info">
-                                        <a href="javascript:void(0)" class="product-title">Tepung
-                                            <span class="badge badge-warning float-right">Rp.30.000</span></a>
-                                        <span class="product-description">
-                                            30 Stok
-                                        </span>
-                                    </div>
-                                </li>
                                 <!-- /.item -->
                             </ul>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer text-center">
-                            <a href="javascript:void(0)" class="uppercase">Lihat Semua Produk yang Baru</a>
+
                         </div>
                         <!-- /.card-footer -->
                     </div>

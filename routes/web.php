@@ -10,6 +10,7 @@ use App\Http\Controllers\TPembelianController;
 use App\Http\Controllers\TPenjualanController;
 use App\Http\Controllers\HpembelianController;
 Use App\Http\Controllers\HpenjualanController;
+Use App\Http\Controllers\DashboardController;
 use App\Models\Barang;
 use App\Models\TPembelian;
 use App\Models\Bpembelian;
@@ -17,6 +18,7 @@ use App\Models\TPenjualan;
 use App\Models\Bpenjualan;
 use App\Models\Hpembelian;
 use App\Models\Hpenjualan;
+use App\Models\dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +35,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('can:akses-transaksi');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
