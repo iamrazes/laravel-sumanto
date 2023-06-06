@@ -8,11 +8,15 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TPembelianController;
 use App\Http\Controllers\TPenjualanController;
+use App\Http\Controllers\HpembelianController;
+Use App\Http\Controllers\HpenjualanController;
 use App\Models\Barang;
 use App\Models\TPembelian;
 use App\Models\Bpembelian;
 use App\Models\TPenjualan;
 use App\Models\Bpenjualan;
+use App\Models\Hpembelian;
+use App\Models\Hpenjualan;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,17 +118,17 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
 
     //Management System
-    // History Transaksi
-    Route::get('/management/htransaksi', function () { return view('admin.management.htransaksi.index'); })->name('htransaksi')->middleware('can:akses-manajemen');
+    // History Pembelian
+    Route::get('/management/hpembelian', [HpembelianController::class, 'index'])->name('hpembelian')->middleware('can:akses-manajemen');
+    //History Penjualan
+    Route::get('/management/hpenjualan', [HpenjualanController::class, 'index'])->name('hpenjualan')->middleware('can:akses-manajemen');
+    //Route::get('/management/hpenjualan', function () { return view('admin.management.hpenjualan.index'); })->name('hpenjualan')->middleware('can:akses-manajemen');
 
+    //Route::get('/management/htransaksi', [HpembelianController::class, 'show'])->name('transaksi')->middleware('can:akses-manajemen');
+    //Route::get('/management/hpenjualan', function () { return view('admin.management.hpenjualan.index'); })->name('hpenjualan')->middleware('can:akses-manajemen');
     // Laporan Keuangan
     Route::get('/management/lkeuangan', function () { return view('admin.management.lkeuangan.index'); })->name('lkeuangan')->middleware('can:akses-manajemen');
 
-    // Penambahan Stok barang
-    //Route::get('/management/pstokbarang', function () { return view('admin.management.pstokbarang.index'); })->name('pstokbarang')->middleware('can:akses-manajemen');
-
-    // Penambahan Barang Baru
-    //Route::get('/management/pbarangbaru', function () { return view('admin.management.pbarangbaru.index'); })->name('pbarangbaru')->middleware('can:akses-manajemen');
 
     // Akun Pegawai
     Route::get('/management/apegawai', function () { return view('admin.management.apegawai.index'); })->name('apegawai')->middleware('can:akses-manajemen');
@@ -139,8 +143,6 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     ])->middleware('can:akses-manajemen');
 
 
-    // pakun
-    //Route::get('/management/pakun', function () { return view('admin.management.pakun.index'); })->name('pakun')->middleware('can:akses-manajemen');
 
 
 });

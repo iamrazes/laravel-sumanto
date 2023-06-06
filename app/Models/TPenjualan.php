@@ -10,4 +10,8 @@ class TPenjualan extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    public function kasir()
+    {
+        return $this->belongsTo(User::class, 'kasir_id');
+    }
 }
