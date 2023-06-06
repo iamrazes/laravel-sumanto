@@ -24,7 +24,7 @@
     <div class="content">
         <div class="row m-2 mb-4">
             <div class="d-flex flex-row">
-                <a href="{{ url()->previous() }}">
+                <a href="javascript:history.back()">
                     <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded mx-2 shadow"
                         type="">
                         <span>Kembali</span>
