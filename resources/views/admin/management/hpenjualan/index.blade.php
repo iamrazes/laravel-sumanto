@@ -47,8 +47,8 @@
                   <tbody>
 
                     @foreach ($dtPenjualan as $item)
-                    @foreach ($item as $item2)
-                      @if ($loop->first)
+                        @foreach ($item as $item2)
+                            @if ($loop->first)
                       <tr>
                         <td>SMNTP-{{$item2->t_penjualans_id}}</td>
                         <td>{{$item2->created_at}}</td>
@@ -62,10 +62,9 @@
                           </button>
                         </td>
                       </tr>
-                      @endif
+                            @endif
+                        @endforeach
                     @endforeach
-
-                @endforeach
                 <tr>
                     @php
                     $arr = [];
