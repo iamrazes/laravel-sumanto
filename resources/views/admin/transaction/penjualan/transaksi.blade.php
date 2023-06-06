@@ -101,7 +101,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th style="width: 150px;">ID Barang</th>
+                            <th style="width: 175px;">ID Barang</th>
                             <th>Barang</th>
                             {{-- Harga Jual x Jumlah Baramg --}}
                             <th style="width: 100px;">Harga Jual</th>

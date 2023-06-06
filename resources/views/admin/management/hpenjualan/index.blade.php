@@ -38,7 +38,7 @@
                                         <th>Tanggal Penjualan</th>
                                         <th>Pegawai</th>
                                         <th>Jumlah Barang</th>
-                                        <th>Total Pembelian</th>
+                                        <th>Total Harga</th>
                                         <th>Harga Bayar</th>
                                         <th>Kembalian</th>
                                         <th></th>
