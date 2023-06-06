@@ -118,6 +118,7 @@
                 {{ request()->routeIs('mdashboard') ? 'menu-open' : '' }}
                 {{ request()->routeIs('apegawai') ? 'menu-open' : '' }}
                 {{ request()->routeIs('hpembelian') ? 'menu-open' : '' }}
+                {{ request()->routeIs('hpenjualan') ? 'menu-open' : '' }}
                 {{ request()->routeIs('lkeuangan') ? 'menu-open' : '' }}
                 {{ request()->routeIs('admin.management.apegawai.create') ? 'menu-open' : '' }}">
 
@@ -145,13 +146,13 @@
                                     <p>H Transaksi Penjualan</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{ route('lkeuangan') }}"
                                     class="nav-link {{ request()->routeIs('lkeuangan') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Laporan Keuangan</p>
                                 </a>
-                            </li>
+                            </li> --}}
 
                             <li class="nav-item">
                                 <a href="{{ route('apegawai') }}"

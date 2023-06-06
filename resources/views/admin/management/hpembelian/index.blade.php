@@ -46,15 +46,14 @@
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach ($dtPembelian as $item)
-                      @foreach ($item as $item2)
+                @foreach ($dtPembelian as $item)
+                    @foreach ($item as $item2)
                       @if ($loop->first)
                       <tr>
                         <td>SMNT-{{$item2->t_pembelians_id}}</td>
                         <td>{{$item2->created_at}}</td>
                         <td>{{$item2->transaksi->kasir->name}}</td>
-
-                        <td>{{$item2->quantity}}</td>
+                        <td>{{array_sum($item->pluck('quantity')->toArray())}}</td>
                         <td>{{$item2->total_harga}}</td>
                         <td>{{$item2->harga_bayar}}</td>
                         <td>{{$item2->kembalian}}
@@ -63,10 +62,10 @@
                           </button>
                         </td>
                       </tr>
-                        @endif
-                      @endforeach
+                      @endif
+                    @endforeach
 
-                  @endforeach
+                @endforeach
 
 
                   <tr>
@@ -123,7 +122,7 @@
     <p class="m-0">Pegawai : {{$item2->transaksi->kasir->name}}</p>
     <p class="m-0">Nama Barang : {{$item2->barang->nama_barang}}</p>
     <p class="m-0">Jumlah : {{$item2->quantity}}</p>
-    <p class="m-0">Total Harga : {{$item2->total_harga}}</p>
+    <p class="m-0">Total Harga : {{ $item2->harga_beli*$item2->quantity }}</p>
     <p class="m-0">Total Bayar : {{$item2->harga_bayar}}</p>
     <p class="m-0">Kembalian : {{$item2->kembalian}}</p>
     <hr>
@@ -172,6 +171,9 @@
 @endsection
 
 @section('script')
+<script>
+  document.querySelector('title').innerText = "Laporan Pembelian, tanggal {{ now()->format('d m Y') }}"
+</script>
 <script>
     $(function() {
         $("#example1").DataTable({

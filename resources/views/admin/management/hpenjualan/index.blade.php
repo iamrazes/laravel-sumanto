@@ -45,19 +45,82 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>SMNT0304230004</td>
-                    <td>3 April 2023, Senin</td>
-                    <td>Sumanto
-                    </td>
-                    <td>1</td>
-                    <td>Rp.100.000</td>
-                    <td>Rp.100.000</td>
-                    <td>Rp.99.000</td>
-                  </tr>
 
-                  </tfoot>
+                    @foreach ($dtPenjualan as $item)
+                    @foreach ($item as $item2)
+                      @if ($loop->first)
+                      <tr>
+                        <td>SMNTP-{{$item2->t_penjualans_id}}</td>
+                        <td>{{$item2->created_at}}</td>
+                        <td>{{$item2->transaksi->kasir->name}}</td>
+                        <td>{{$item2->quantity}}</td>
+                        <td>{{$item2->total_harga}}</td>
+                        <td>{{$item2->harga_bayar}}</td>
+                        <td>{{$item2->kembalian}}
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trx{{$item[0]->t_penjualans_id }}">
+                            detail
+                          </button>
+                        </td>
+                      </tr>
+                      @endif
+                    @endforeach
+
+                @endforeach
+                <tr>
+                    @php
+                    $arr = [];
+                    foreach ($dtPenjualan as $item) {
+                      foreach ($item as $item2) {
+                        array_push($arr, $item2->harga_jual);
+                      }
+                    }
+                    @endphp
+                    <td >Total: {{ array_sum($arr) }}</td>
+                    <td > </td>
+                    <td > </td>
+                    <td > </td>
+                    <td > </td>
+                    <td > </td>
+                    <td > </td>
+                  </tr>
+                </tbody>
                 </table>
+
+                @foreach ($dtPenjualan as $item)
+                  <div class="modal fade" id="trx{{ $item[0]->t_penjualans_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          @foreach ($item as $item2)
+
+    <p class="m-0">ID : {{$item2->t_penjualans_id}}</p>
+    <p class="m-0">Tgl : {{$item2->created_at}}</p>
+    <p class="m-0">Pegawai : {{$item2->transaksi->kasir->name}}</p>
+    <p class="m-0">Nama Barang : {{$item2->barang->nama_barang}}</p>
+    <p class="m-0">Jumlah : {{$item2->quantity}}</p>
+    <p class="m-0">Total Harga : {{$item2->harga_jual}}</p>
+    <p class="m-0">Total Bayar : {{$item2->harga_bayar}}</p>
+    <p class="m-0">Kembalian : {{$item2->kembalian}}</p>
+    <hr>
+
+                        @if ($loop->first)
+                        @endif
+                      @endforeach
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                @endforeach
               </div>
               <!-- /.card-body -->
             </div>
@@ -87,6 +150,9 @@
 @endsection
 
 @section('script')
+<script>
+    document.querySelector('title').innerText = "Laporan Penjualan, tanggal {{ now()->format('d m Y') }}"
+  </script>
 <script>
     $(function() {
         $("#example1").DataTable({

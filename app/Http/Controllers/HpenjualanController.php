@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\hpenjualan;
 use App\Http\Requests\StorehpenjualanRequest;
 use App\Http\Requests\UpdatehpenjualanRequest;
+use App\Models\bpenjualan;
+use App\Models\TPenjualan;
 
 class HpenjualanController extends Controller
 {
@@ -13,7 +15,10 @@ class HpenjualanController extends Controller
      */
     public function index()
     {
-        //
+        $dtPenjualan = bpenjualan::with('transaksi.kasir', 'barang')->get()->groupBy('t_penjualans_id');
+        // return $dtPenjualan;
+
+        return view('admin.management.hpenjualan.index', compact('dtPenjualan'));
     }
 
     /**
