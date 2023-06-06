@@ -33,6 +33,12 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama_barang' => ['required'],
+            'harga_jual' => ['required'],
+            'harga_beli' => ['required']
+        ]);
+
         Barang::create([
             'nama_barang' => $request->nama_barang,
             'harga_jual' => $request->harga_jual,

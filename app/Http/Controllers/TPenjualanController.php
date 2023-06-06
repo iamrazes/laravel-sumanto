@@ -81,8 +81,11 @@ class TPenjualanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TPenjualan $tPenjualan)
+    public function destroy($id)
     {
-        //
+        $transaksi = TPenjualan::findOrFail($id);
+        $transaksi->delete();
+
+        return redirect()->route('penjualan')->with('status', 'Transaction Cancelled!');
     }
 }

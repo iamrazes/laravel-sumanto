@@ -26,9 +26,13 @@
     <div class="content">
         <div class="row m-2">
             <div>
-                <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow" type="">
-                    <span>Cancel</span>
-                </button>
+                <form action="{{ route('penjualan.transaksi.destroy', $transaksi->id) }}" method="POST">
+                    @csrf
+                    <button style="width: 150px; height: 50px;" class="bg-danger border-0 rounded mx-2 shadow"
+                        type="">
+                        <span>Cancel</span>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -100,7 +104,7 @@
                             <th style="width: 100px;">ID Barang</th>
                             <th>Barang</th>
                             {{-- Harga Jual x Jumlah Baramg --}}
-                            <th style="width: 100px;">Harga</th>
+                            <th style="width: 100px;">Harga Jual</th>
                             <th style="width: 100px;">Jumlah</th>
                             <th style="width: 30px;">Option</th>
                         </tr>
