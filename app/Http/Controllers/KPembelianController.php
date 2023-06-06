@@ -35,6 +35,9 @@ class KPembelianController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'harga_bayar' => ['required']
+        ]);
 
         $transaksi = TPembelian::findOrFail($id);
         $bpembelian = Bpembelian::where('t_pembelians_id', $id)->get();

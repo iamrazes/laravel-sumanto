@@ -48,6 +48,16 @@
             <div class="card ">
                 <!-- /.card-header -->
                 <!-- form start -->
+                @if ($errors->any())
+                    <div class="alert btn-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form class="form-horizontal" action="" method="get">
                     <div class="card-header">
                         <h3>Detail Transaksi : {{ $transaksi->id }}</h3>
