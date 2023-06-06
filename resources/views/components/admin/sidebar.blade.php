@@ -124,7 +124,15 @@
 
 
                         <a href="#"
-                            class="nav-link {{ request()->routeIs('mdashboard') ? 'active' : '' }} {{ request()->routeIs('admin.management.apegawai.create') ? 'active' : '' }} {{ request()->routeIs('htransaksi') ? 'active' : '' }} {{ request()->routeIs('lkeuangan') ? 'active' : '' }} {{ request()->routeIs('apegawai') ? 'active' : '' }} {{ request()->routeIs('pbarangbaru') ? 'active' : '' }} {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
+                            class="nav-link
+                            {{ request()->routeIs('mdashboard') ? 'active' : '' }}
+                            {{ request()->routeIs('admin.management.apegawai.create') ? 'active' : '' }}
+                            {{ request()->routeIs('hpembelian') ? 'active' : '' }}
+                            {{ request()->routeIs('hpenjualan') ? 'active' : '' }}
+                            {{ request()->routeIs('lkeuangan') ? 'active' : '' }}
+                            {{ request()->routeIs('apegawai') ? 'active' : '' }}
+                            {{ request()->routeIs('pbarangbaru') ? 'active' : '' }}
+                            {{ request()->routeIs('pstokbarang') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
                                 Management

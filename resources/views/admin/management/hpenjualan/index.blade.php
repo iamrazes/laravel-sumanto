@@ -41,6 +41,7 @@
                     <th>Total Pembelian</th>
                     <th>Harga Bayar</th>
                     <th>Kembalian</th>
+                    <th></th>
 
                   </tr>
                   </thead>
@@ -57,10 +58,12 @@
                         <td>{{$item2->total_harga}}</td>
                         <td>{{$item2->harga_bayar}}</td>
                         <td>{{$item2->kembalian}}
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trx{{$item[0]->t_penjualans_id }}">
-                            detail
-                          </button>
                         </td>
+                        <td>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trx{{$item[0]->t_penjualans_id }}">
+                            Details
+                          </button>
+                          </td>
                       </tr>
                             @endif
                         @endforeach
@@ -81,6 +84,7 @@
                     <td > </td>
                     <td > </td>
                     <td > </td>
+                    <td></td>
                   </tr>
                 </tbody>
                 </table>
