@@ -14,7 +14,7 @@
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Transaksi Pembelian</li>
-                        <li class="breadcrumb-item active">{{ $transaksi->id }}</li>
+                        <li class="breadcrumb-item active">SMNTOBELI2023-{{ $transaksi->id }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col">
                     <span class="text-bold text-lg">
-                        {{ $transaksi->id }}
+                        SMNTOBELI2023-{{ $transaksi->id }}
                     </span>
                 </div>
                 <div>
@@ -95,14 +95,14 @@
                     <form class="d-flex form-group" action="{{ route('tambahitem') }}" method="POST">
                         @csrf
                         <input type="hidden" name="t_pembelians_id" value="{{ $transaksi->id }}">
-                        <select class="select2" style="width: 100%;  height: 100%" name="barang_id">
+                        <select class="select2" style="width: 100%;  height: 100%" name="barang_id" required>
                             <option value="" disabled selected>Pilih Barang</option>
                             @foreach ($dtbarang as $item)
                                 <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
                             @endforeach
                         </select>
                         <input type="number" placeholder="Jumlah" class="rounded border-0 text-center mx-2"
-                            style="width: 100px" name="quantity">
+                            style="width: 100px" name="quantity" required>
                         <button class="btn-success btn-lg border-0" style="height: 100%; width: 100px">
                             <span>Tambah</span>
                         </button>
@@ -121,12 +121,12 @@
                     <thead>
                         <tr>
                             <th style="width: 10px;">#</th>
-                            <th style="width: 100px;">ID Barang</th>
+                            <th style="width: 150px;">ID Barang</th>
                             <th>Barang</th>
                             {{-- Harga Beli x Jumlah Barang --}}
                             <th style="width: 100px;">Harga Beli</th>
                             <th style="width: 100px;">Jumlah</th>
-                            <th style="width: 30px;">Option</th>
+                            {{-- <th style="width: 30px;">Option</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -136,11 +136,11 @@
                         @foreach ($bpembelian as $item)
                             <tr>
                                 <td>{{ $n++ }}</td>
-                                <td>{{ $item->barang_id }}</td>
+                                <td>SMNTOBRG2023-{{ $item->barang_id }}</td>
                                 <td>{{ $item->nama_barang }}</td>
                                 <td>{{ $item->harga_beli }}</td>
                                 <td>{{ $item->quantity }}</td>
-                                <td></td>
+                                {{-- <td></td> --}}
                             </tr>
                         @endforeach
                     </tbody>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hpembelian;
+use App\Models\hpembelian;
 use App\Http\Requests\StorehpembelianRequest;
 use App\Http\Requests\UpdatehpembelianRequest;
 use App\Models\bpembelian;

@@ -13,7 +13,7 @@
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Transaksi Penjualan</li>
-                        <li class="breadcrumb-item active">{{ $transaksi->id }}</li>
+                        <li class="breadcrumb-item active">SMNTOJUAL2023-{{ $transaksi->id }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -58,9 +58,17 @@
                         </ul>
                     </div>
                 @endif
+
+                @if (session('error'))
+                 <div class="alert alert-danger aler-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                    {{session('error')}}
+                 </div>
+                @endif
+
                 <form class="form-horizontal" action="" method="get">
                     <div class="card-header">
-                        <h3>Detail Transaksi : {{ $transaksi->id }}</h3>
+                        <h3>Detail Transaksi : SMNTOJUAL2023-{{ $transaksi->id }}</h3>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column ">
@@ -69,13 +77,13 @@
                                 <label for="">ID Transaksi</label>
                                 <input type="text"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-right"
-                                    style="height: 40px;" value="1D7R4N54K51" readonly>
+                                    style="height: 40px;" value="SMNTOJUAL2023-{{ $transaksi->id }}" readonly>
                             </div>
                             <div class="d-flex justify-content-between mt-3">
                                 <label for="">Tanggal Transaksi</label>
                                 <input type="text"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-right"
-                                    style="height: 40px;" value="Rabu, 07 Juni 2023" readonly>
+                                    style="height: 40px;" value="{{ $transaksi->created_at->format('l, d m Y') }}" readonly>
                             </div>
                             <div class="d-flex justify-content-between mt-3">
                                 <label for="">Daftar Barang</label>

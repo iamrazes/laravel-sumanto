@@ -42,7 +42,6 @@
                                         <th>Total Harga</th>
                                         <th>Total Bayar</th>
                                         <th>Kembalian</th>
-                                        <th></th>
 
                                     </tr>
                                 </thead>
@@ -51,18 +50,16 @@
                                         @foreach ($item as $item2)
                                             @if ($loop->first)
                                                 <tr>
-                                                    <td>SMNT-{{ $item2->t_pembelians_id }}</td>
+                                                    <td>SMNTOBELI2023{{ $item2->t_pembelians_id }}</td>
                                                     <td>{{ $item2->created_at }}</td>
                                                     <td>{{ $item2->transaksi->kasir->name }}</td>
                                                     <td>{{ array_sum($item->pluck('quantity')->toArray()) }}</td>
                                                     <td>{{ $item2->total_harga }}</td>
                                                     <td>{{ $item2->harga_bayar }}</td>
                                                     <td>{{ $item2->kembalian }}
-                                                    </td>
-                                                    <td>
                                                         <button type="button" class="btn btn-primary" data-toggle="modal"
                                                             data-target="#trx{{ $item[0]->t_penjualans_id }}">
-                                                            Details
+                                                            detail
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -84,7 +81,6 @@
                                         <td> </td>
                                         <td> </td>
                                         <td> </td>
-                                        <td></td>
                                         <td> </td>
                                         <td> </td>
                                         <td> </td>
@@ -106,36 +102,39 @@
                                             </div>
                                             <div class="modal-body">
                                                 @foreach ($item as $item2)
-                                                    {{-- <table> --}}
-                                                    {{-- <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Tgl</th>
-                            <th>Pegawai</th>
-                            <th>Nama Barang</th>
-                            <th>Jumlah Barang</th>
-                            <th>Harga Satuan</th>
-                            <th>Total Harga</th>
-                            <th>Total Bayar</th>
-                            <th>Kembalian</th>
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Tgl</th>
+                                                                <th>Pegawai</th>
+                                                                <th>Nama Barang</th>
+                                                                <th>Jumlah Barang</th>
+                                                                <th>Harga Satuan</th>
+                                                                <th>Total Harga</th>
+                                                                <th>Total Bayar</th>
+                                                                <th>Kembalian</th>
 
-                          </tr>
-                          </thead> --}}
-                                                    {{-- <tbody> --}}
-                                                    {{-- <tr> --}}
-                                                    <p class="m-0">ID : {{ $item2->t_pembelians_id }}</p>
-                                                    <p class="m-0">Tgl : {{ $item2->created_at }}</p>
-                                                    <p class="m-0">Pegawai : {{ $item2->transaksi->kasir->name }}</p>
-                                                    <p class="m-0">Nama Barang : {{ $item2->barang->nama_barang }}</p>
-                                                    <p class="m-0">Jumlah : {{ $item2->quantity }}</p>
-                                                    <p class="m-0">Total Harga :
-                                                        {{ $item2->harga_beli * $item2->quantity }}</p>
-                                                    <p class="m-0">Total Bayar : {{ $item2->harga_bayar }}</p>
-                                                    <p class="m-0">Kembalian : {{ $item2->kembalian }}</p>
-                                                    <hr>
-                                                    {{-- </tr> --}}
-                                                    {{-- </tbody> --}}
-                                                    {{-- </table> --}}
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <p class="m-0">ID : {{ $item2->t_pembelians_id }}</p>
+                                                                <p class="m-0">Tgl : {{ $item2->created_at }}</p>
+                                                                <p class="m-0">Pegawai :
+                                                                    {{ $item2->transaksi->kasir->name }}</p>
+                                                                <p class="m-0">Nama Barang :
+                                                                    {{ $item2->barang->nama_barang }}</p>
+                                                                <p class="m-0">Jumlah : {{ $item2->quantity }}</p>
+                                                                <p class="m-0">Total Harga :
+                                                                    {{ $item2->harga_beli * $item2->quantity }}</p>
+                                                                <p class="m-0">Total Bayar : {{ $item2->harga_bayar }}
+                                                                </p>
+                                                                <p class="m-0">Kembalian : {{ $item2->kembalian }}</p>
+                                                                <hr>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                     @if ($loop->first)
                                                     @endif
                                                 @endforeach

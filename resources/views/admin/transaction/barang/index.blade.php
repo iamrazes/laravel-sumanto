@@ -42,7 +42,7 @@
                             <table id="example1" class="table table-bordered ">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50px;">ID</th>
+                                        <th style="width: 125px;">ID</th>
                                         <th>Nama Barang</th>
                                         <th style="width: 100px;">Harga Jual</th>
                                         <th style="width: 100px;">Harga Beli</th>
@@ -53,7 +53,7 @@
                                 <tbody>
                                     @foreach ($dtbarang as $item)
                                         <tr>
-                                            <td>{{ $item->id }}</td>
+                                            <td>SMNTOBRG2023-{{ $item->id }}</td>
                                             <td>{{ $item->nama_barang }}</td>
                                             <td>{{ $item->harga_jual }}</td>
                                             <td>{{ $item->harga_beli }}</td>

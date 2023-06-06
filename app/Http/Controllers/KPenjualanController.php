@@ -39,7 +39,36 @@ class KPenjualanController extends Controller
         ]);
 
         $transaksi = TPenjualan::findOrFail($id);
+        // return 'transaksi ok';
+
         $bpenjualan = Bpenjualan::where('t_penjualans_id', $id)->get();
+        // return 'bpenjualan ok';
+
+        foreach ($bpenjualan as $item) {
+            // cek stock ada atau tidak
+            $barang = Barang::findOrFail($item->barang_id);
+            // return $barang;
+
+            if ($barang->stok_barang == 0) {
+                // return 999;
+                return back()->with('error', 'Maaf, Stok barang sedang tidak tersedia!');
+            }
+        }
+
+        // // apabila stock
+        // if ($product->stock == 1) {
+        //     // jika produk tersisa 1
+        //     $product->update([
+        //         'stock' => $product->stock - 1,
+        //         'status' => 'Not Available'
+        //     ]);
+        // } else {
+        //     // jika produk lebih dari 1
+        //     $product->update([
+        //         'stock' => $product->stock - 1
+        //     ]);
+        // }
+
 
         foreach ($bpenjualan as $item) {
             $dtbarang = Barang::find($item->barang_id);
@@ -52,6 +81,8 @@ class KPenjualanController extends Controller
                     'stok_barang' => $stok - $item->quantity
                 ]);
             }
+
+
 
             $item->update([
                 'harga_bayar' => $request->harga_bayar,

@@ -34,7 +34,7 @@
 
         <div class="d-flex justify-content-center row m-2">
             <div class="d-flex justofy-content-between">
-                <a href="{{ route('dashboard') }}" class="mr-2">
+                <a href="{{ route('hpembelian') }}" class="mr-2">
                     <button style="width: 150px; height: 50px;" class="btn-primary border-0 rounded shadow">
                         <span class="fa fa-history mr-2">
                         </span>

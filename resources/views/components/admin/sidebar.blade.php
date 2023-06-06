@@ -144,14 +144,14 @@
                                 <a href="{{ route('hpembelian') }}"
                                     class="nav-link {{ request()->routeIs('hpembelian') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>H Transaksi Pembelian</p>
+                                    <p>History Pembelian</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('hpenjualan') }}"
                                     class="nav-link {{ request()->routeIs('hpenjualan') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>H Transaksi Penjualan</p>
+                                    <p>History Penjualan</p>
                                 </a>
                             </li>
                             {{-- <li class="nav-item">

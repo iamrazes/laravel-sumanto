@@ -13,7 +13,7 @@
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="breadcrumb-item active">Transaksi</li>
                         <li class="breadcrumb-item active">Transaksi Pembelian</li>
-                        <li class="breadcrumb-item active">{{ $transaksi->id }}</li>
+                        <li class="breadcrumb-item active">SMNTOBELI2023-{{ $transaksi->id }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -60,7 +60,7 @@
                 @endif
                 <form class="form-horizontal" action="" method="get">
                     <div class="card-header">
-                        <h3>Detail Transaksi : {{ $transaksi->id }}</h3>
+                        <h3>Detail Transaksi : SMNTOBELI2023-{{ $transaksi->id }}</h3>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column ">
@@ -69,7 +69,7 @@
                                 <label for="">ID Transaksi</label>
                                 <input type="text"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-right"
-                                    style="height: 40px;" value="{{ $transaksi->id }}" readonly>
+                                    style="height: 40px;" value="SMNTOBELI2023-{{ $transaksi->id }}" readonly>
                             </div>
                             <div class="d-flex justify-content-between mt-3">
                                 <label for="">Tanggal Transaksi</label>
@@ -116,7 +116,7 @@
                                 <input type="number"
                                     class="rounded col-sm-8 bg-transparent border-white text-white text-center p-3"
                                     name="harga_bayar" style="height: 40px;" placeholder="Masukan nominal uang"
-                                    value="{{ request()->harga_bayar }}">
+                                    value="{{ request()->harga_bayar }}" required>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <label for=""></label>
