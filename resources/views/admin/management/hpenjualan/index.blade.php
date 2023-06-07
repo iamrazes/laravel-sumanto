@@ -51,7 +51,7 @@
                                         @foreach ($item as $item2)
                                             @if ($loop->first)
                                                 <tr>
-                                                    <td>SMNTO20230{{ $item2->t_penjualans_id }}</td>
+                                                    <td>SMNTO20230-{{ $item2->t_penjualans_id }}</td>
                                                     <td>{{ $item2->created_at }}</td>
                                                     <td>{{ $item2->transaksi->kasir->name }}</td>
                                                     <td>{{ array_sum($item->pluck('quantity')->toArray()) }}</td>
@@ -77,7 +77,7 @@
                                             $arr = [];
                                             foreach ($dtPenjualan as $item) {
                                                 foreach ($item as $item2) {
-                                                    array_push($arr, $item2->harga_jual);
+                                                    array_push($arr, $item2->jumlah_harga);
                                                 }
                                             }
                                         @endphp

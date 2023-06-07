@@ -42,6 +42,7 @@
                     <th>Total Harga</th>
                     <th>Total Bayar</th>
                     <th>Kembalian</th>
+                    <th></th>
 
                   </tr>
                   </thead>
@@ -50,15 +51,16 @@
                     @foreach ($item as $item2)
                       @if ($loop->first)
                       <tr>
-                        <td>SMNTPEM-{{$item2->t_pembelians_id}}</td>
+                        <td>SMNTO20230-{{$item2->t_pembelians_id}}</td>
                         <td>{{$item2->created_at}}</td>
                         <td>{{$item2->transaksi->kasir->name}}</td>
                         <td>{{array_sum($item->pluck('quantity')->toArray())}}</td>
                         <td>{{$item2->total_harga}}</td>
                         <td>{{$item2->harga_bayar}}</td>
-                        <td>{{$item2->kembalian}}
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#trx{{$item[0]->t_pembelians_id }}">
-                            detail
+                        <td>{{$item2->kembalian}}</td>
+                        <td>
+                          <button type="button" class="btn btn-primary shadow" data-toggle="modal" data-target="#trx{{$item[0]->t_pembelians_id }}">
+                            <span class="fa fa-eye"></span> Details
                           </button>
                         </td>
                       </tr>
@@ -73,7 +75,7 @@
                     $arr = [];
                     foreach ($dtPembelian as $item) {
                       foreach ($item as $item2) {
-                        array_push($arr, $item2->total_harga);
+                        array_push($arr, $item2->jumlah_harga);
                       }
                     }
                     @endphp
@@ -81,7 +83,8 @@
                     <td > </td>
                     <td > </td>
                     <td > </td>
-                    <td ></td>
+                    <td > </td>
+                    <td > </td>
                     <td > </td>
                     <td > </td>
                   </tr>
