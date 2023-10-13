@@ -2,7 +2,7 @@
 
 ## About Sumanto
 
-Sumanto is website-based transaction and management system.
+Sumanto is a web-based system designed to streamline and simplify management and transaction processes.
 
 ## Installation Guide
 
